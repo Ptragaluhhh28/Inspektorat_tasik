@@ -8,13 +8,25 @@
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
 <style>
+    /* Remove any default margins/padding that might create white space */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-content {
+        margin: 0;
+        padding: 0;
+    }
+
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(12, 74, 156, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 6rem 0 4rem;
         text-align: center;
+        margin-top: 0;
     }
 
     .page-title {
@@ -28,9 +40,16 @@
         padding: 4rem 0;
     }
 
+    .contact-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
     .contact-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 4rem;
         margin-bottom: 4rem;
         align-items: start;
@@ -40,37 +59,32 @@
         padding: 2rem 0;
     }
 
-    .contact-info h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
     .contact-item {
         display: flex;
         align-items: flex-start;
         gap: 1.5rem;
-        margin-bottom: 2rem;
         padding: 2rem;
         background: white;
         border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
-        border: 1px solid rgba(16, 85, 201, 0.1);
+        border: 1px solid rgba(8, 131, 149, 0.1);
+        height: 100%;
+        min-height: 160px;
+        overflow: hidden; /* Prevents any content from overflowing */
+        word-wrap: break-word;
     }
 
     .contact-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 16px 48px rgba(16, 85, 201, 0.2);
-        border-color: rgba(16, 85, 201, 0.3);
+        box-shadow: 0 16px 48px rgba(8, 131, 149, 0.2);
+        border-color: rgba(8, 131, 149, 0.3);
     }
 
     .contact-icon {
         width: 56px;
         height: 56px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -78,11 +92,13 @@
         color: white;
         font-size: 1.4rem;
         flex-shrink: 0;
-        box-shadow: 0 4px 16px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 4px 16px rgba(8, 131, 149, 0.3);
     }
 
     .contact-details {
         flex: 1;
+        min-width: 0; /* Allows flex item to shrink below content size */
+        overflow: hidden; /* Prevents overflow */
     }
 
     .contact-details h4 {
@@ -90,9 +106,11 @@
         font-weight: 600;
         color: #2c3e50;
         margin-bottom: 0.8rem;
-        border-bottom: 2px solid #1055C9;
+        border-bottom: 2px solid #088395;
         padding-bottom: 0.5rem;
         display: inline-block;
+        word-wrap: break-word;
+        max-width: 100%;
     }
 
     .contact-details p {
@@ -100,35 +118,45 @@
         line-height: 1.7;
         margin: 0;
         font-size: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
     }
 
     .contact-details a {
-        color: #1055C9;
+        color: #088395;
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
         border-bottom: 1px solid transparent;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: inline-block;
+        max-width: 100%;
     }
 
     .contact-details a:hover {
-        color: #0c4a9c;
-        border-bottom-color: #0c4a9c;
+        color: #73C8D2;
+        border-bottom-color: #73C8D2;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
+        .contact-info-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
         .contact-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
         }
         
-        .contact-info h2 {
-            font-size: 2rem;
-        }
-        
         .contact-item {
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            min-height: 140px;
         }
         
         .contact-icon {
@@ -190,8 +218,8 @@
     .form-select:focus,
     .form-textarea:focus {
         outline: none;
-        border-color: #1055C9;
-        box-shadow: 0 0 0 3px rgba(16, 85, 201, 0.1);
+        border-color: #088395;
+        box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.1);
     }
 
     .form-textarea {
@@ -201,7 +229,7 @@
 
     .form-btn {
         width: 100%;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         border: none;
         padding: 1rem 2rem;
@@ -214,11 +242,11 @@
 
     .form-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 15px 40px rgba(8, 131, 149, 0.3);
     }
 
     .map-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin-top: 2rem;
         border-radius: 20px;
@@ -258,7 +286,7 @@
 
     .popup-content h4 {
         margin: 0 0 8px 0;
-        color: #1055C9;
+        color: #088395;
         font-weight: 600;
     }
 
@@ -277,7 +305,7 @@
     }
 
     .info-card h4 {
-        color: #1055C9;
+        color: #088395;
         margin-bottom: 1rem;
         font-size: 1.2rem;
     }
@@ -294,6 +322,11 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+        .contact-info-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
         .contact-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
@@ -303,6 +336,7 @@
             flex-direction: column;
             text-align: center;
             gap: 1rem;
+            min-height: auto;
         }
         
         .contact-icon {
@@ -350,7 +384,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
     }
 
     .hours-card:hover {
@@ -361,7 +395,7 @@
     .hours-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -412,7 +446,7 @@
 
     .social-btn:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.3);
     }
 
     .social-btn:active {
@@ -448,13 +482,13 @@
     }
 
     .quick-contact {
-        background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        background: linear-gradient(135deg, #E9F8F9, #ffffff);
         border-radius: 20px;
         padding: 3rem;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         margin-top: 4rem;
         text-align: center;
-        border: 1px solid rgba(16, 85, 201, 0.1);
+        border: 1px solid rgba(8, 131, 149, 0.1);
     }
 
     .quick-contact h3 {
@@ -473,7 +507,7 @@
         transform: translateX(-50%);
         width: 60px;
         height: 3px;
-        background: linear-gradient(135deg, #1055C9, #5a6fd8);
+        background: linear-gradient(135deg, #088395, #5a6fd8);
         border-radius: 2px;
     }
 
@@ -485,12 +519,23 @@
     }
 
     .quick-buttons {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 1.5rem;
-        justify-content: center;
         max-width: 600px;
         margin: 0 auto;
+    }
+    
+    .quick-buttons-row {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    
+    .quick-buttons-row.second-row {
+        justify-content: center;
     }
 
     .quick-btn {
@@ -505,6 +550,8 @@
         gap: 0.8rem;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         font-size: 1rem;
+        min-width: 200px;
+        flex: 0 0 auto;
     }
 
     .quick-btn:hover {
@@ -551,12 +598,19 @@
         }
         
         .quick-buttons {
-            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .quick-buttons-row {
+            flex-direction: column;
+            align-items: center;
             gap: 1rem;
         }
         
         .quick-btn {
             padding: 1rem 1.5rem;
+            width: 100%;
+            max-width: 250px;
         }
     }
     }
@@ -580,17 +634,6 @@
         
         .contact-form {
             padding: 2rem;
-        }
-        
-        .quick-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .quick-btn {
-            width: 100%;
-            max-width: 250px;
-            justify-content: center;
         }
         
         .social-links {
@@ -620,77 +663,80 @@
 <!-- Contact Container -->
 <section class="contact-container">
     <div class="container">
-        <div class="contact-grid">
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <h2 data-aos="fade-up">Informasi Kontak</h2>
-                
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Alamat Kantor</h4>
-                        <p>Jl. Letnan Harun No. 1, Sukamulya<br>
-                        Kec. Bungursari<br>
-                        Tasikmalaya, Jawa Barat 46151</p>
-                    </div>
+        <!-- Centered Contact Info Title -->
+        <div class="text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up">Informasi Kontak</h2>
+        </div>
+        
+        <!-- Contact Information Grid -->
+        <div class="contact-info-grid">
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
                 </div>
-
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Telepon</h4>
-                        <p><a href="tel:+62265331548">(0265) 331-548</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="contact-icon">
-                        <i class="fas fa-fax"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Fax</h4>
-                        <p>(0265) 331-549<br>(0265) 331-466</p>
-                    </div>
-                </div>
-
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p><a href="mailto:inspektorat@tasikmalayakota.go.id">inspektorat@tasikmalayakota.go.id</a><br>
-                        <a href="mailto:pengaduan@tasikmalayakota.go.id">pengaduan@tasikmalayakota.go.id</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="contact-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Website</h4>
-                        <p><a href="https://inspektorat.tasikmalayakota.go.id" target="_blank">inspektorat.tasikmalayakota.go.id</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Jam Operasional</h4>
-                        <p><strong>Senin - Kamis:</strong> 08:00 - 16:00 WIB<br>
-                        <strong>Jumat:</strong> 08:00 - 16:30 WIB<br>
-                        <strong>Sabtu - Minggu:</strong> Tutup</p>
-                    </div>
+                <div class="contact-details">
+                    <h4>Alamat Kantor</h4>
+                    <p>Jl. Letnan Harun No. 1, Sukamulya<br>
+                    Kec. Bungursari<br>
+                    Tasikmalaya, Jawa Barat 46151</p>
                 </div>
             </div>
 
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Telepon</h4>
+                    <p><a href="tel:+62265331548">(0265) 331-548</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-icon">
+                    <i class="fas fa-fax"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Fax</h4>
+                    <p>(0265) 331-549<br>(0265) 331-466</p>
+                </div>
+            </div>
+
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Email</h4>
+                    <p><a href="mailto:inspektorat@tasikmalayakota.go.id">inspektorat@tasikmalayakota.go.id</a><br>
+                    <a href="mailto:pengaduan@tasikmalayakota.go.id">pengaduan@tasikmalayakota.go.id</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="contact-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Website</h4>
+                    <p><a href="https://inspektorat.tasikmalayakota.go.id" target="_blank">inspektorat.tasikmalayakota.go.id</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Jam Operasional</h4>
+                    <p><strong>Senin - Kamis:</strong> 08:00 - 16:00 WIB<br>
+                    <strong>Jumat:</strong> 08:00 - 16:30 WIB<br>
+                    <strong>Sabtu - Minggu:</strong> Tutup</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-grid">
             <!-- Contact Form -->
             <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="form-title">Kirim Pesan</h3>
@@ -786,15 +832,19 @@
             <h3>Kontak Cepat</h3>
             <p>Hubungi kami melalui platform berikut untuk respon yang lebih cepat</p>
             <div class="quick-buttons">
-                <a href="https://wa.me/6285123456789" class="quick-btn btn-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="mailto:inspektorat@tasikmalayakota.go.id" class="quick-btn btn-email">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="tel:+62265331433" class="quick-btn btn-phone">
-                    <i class="fas fa-phone"></i> Telepon
-                </a>
+                <div class="quick-buttons-row">
+                    <a href="https://wa.me/6285123456789" class="quick-btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:inspektorat@tasikmalayakota.go.id" class="quick-btn btn-email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+                <div class="quick-buttons-row second-row">
+                    <a href="tel:+62265331433" class="quick-btn btn-phone">
+                        <i class="fas fa-phone"></i> Telepon
+                    </a>
+                </div>
             </div>
 
             <!-- Social Media Links -->
@@ -825,19 +875,10 @@
         </div>
         <!-- Map Info -->
         <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300" style="max-width: 600px;">
                     <h4><i class="fas fa-map-marker-alt"></i> Alamat Lengkap</h4>
                     <p>Jl. Letnan Harun No. 1, Sukamulya, Kec. Bungursari, Tasikmalaya, Jawa Barat 46151</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
-                    <h4><i class="fas fa-directions"></i> Petunjuk Arah</h4>
-                    <p>Kantor Inspektorat berada di pusat kota Tasikmalaya, mudah diakses dari berbagai arah.</p>
-                    <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-sm btn-outline-primary">
-                        <i class="fas fa-external-link-alt"></i> Buka di Google Maps
-                    </a>
                 </div>
             </div>
         </div>
@@ -872,7 +913,7 @@
         const customIcon = L.divIcon({
             className: 'custom-marker',
             html: `<div style="
-                background: #1055C9;
+                background: #088395;
                 color: white;
                 width: 40px;
                 height: 40px;
@@ -944,7 +985,7 @@
             } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
                 this.style.borderColor = '#dc3545';
             } else {
-                this.style.borderColor = '#1055C9';
+                this.style.borderColor = '#088395';
             }
         });
         

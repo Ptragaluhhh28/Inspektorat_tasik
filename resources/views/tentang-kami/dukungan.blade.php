@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(12, 74, 156, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -49,7 +49,7 @@
     .support-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -73,7 +73,7 @@
     }
 
     .support-btn {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.8rem 2rem;
         border-radius: 30px;
@@ -85,13 +85,13 @@
 
     .support-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 10px 25px rgba(8, 131, 149, 0.3);
         color: white;
         text-decoration: none;
     }
 
     .contact-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         border-radius: 20px;
         margin: 4rem 0;
@@ -120,7 +120,7 @@
     .contact-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -155,7 +155,7 @@
     }
 
     .faq-question {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 1.5rem 2rem;
         cursor: pointer;
         display: flex;
@@ -169,7 +169,7 @@
     }
 
     .faq-question.active {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
     }
 
@@ -207,7 +207,7 @@
     }
 
     .intro-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin-bottom: 3rem;
         border-radius: 20px;
@@ -249,7 +249,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 2px;
     }
 

@@ -6,7 +6,7 @@
 <style>
     /* Hero Section */
     .hero {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(118, 75, 162, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><polygon fill="%23ffffff15" points="0,0 1000,200 1000,400 0,300"/><polygon fill="%23ffffff08" points="0,100 1000,0 1000,150 0,250"/></svg>');
         background-size: cover;
         background-attachment: fixed;
@@ -131,7 +131,7 @@
     .stat-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -139,7 +139,7 @@
         margin: 0 auto 1rem;
         color: white;
         font-size: 2rem;
-        box-shadow: 0 10px 30px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 10px 30px rgba(8, 131, 149, 0.3);
     }
 
     .stat-number {
@@ -156,8 +156,9 @@
 
     /* Services Section */
     .services-section {
-        padding: 6rem 0;
+        padding: 6rem 0 2rem;
         background: #f8f9ff;
+        margin-bottom: 0;
     }
 
     .section-header {
@@ -203,7 +204,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
     }
 
     .service-card:hover {
@@ -214,7 +215,7 @@
     .service-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -238,7 +239,7 @@
     }
 
     .service-link {
-        color: #1055C9;
+        color: #088395;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -253,8 +254,9 @@
 
     /* News Section */
     .news-section {
-        padding: 6rem 0;
+        padding: 2rem 0 6rem;
         background: white;
+        margin-top: 0;
     }
 
     .news-grid {
@@ -280,7 +282,7 @@
 
     .news-image {
         height: 200px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -293,7 +295,7 @@
     }
 
     .news-date {
-        color: #1055C9;
+        color: #088395;
         font-size: 0.9rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -314,7 +316,7 @@
     }
 
     .news-link {
-        color: #1055C9;
+        color: #088395;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -359,7 +361,7 @@
     .quick-link-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: #1055C9;
+        color: #088395;
     }
 
     .quick-link-title {

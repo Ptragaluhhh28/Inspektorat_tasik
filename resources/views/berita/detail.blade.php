@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .article-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(118, 75, 162, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -79,7 +79,7 @@
     .article-image {
         width: 100%;
         height: 400px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 16px;
         margin-bottom: 3rem;
         display: flex;
@@ -123,7 +123,7 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 2px;
     }
 
@@ -133,8 +133,8 @@
     }
 
     .article-body blockquote {
-        background: #f8f9fa;
-        border-left: 4px solid #1055C9;
+        background: #E9F8F9;
+        border-left: 4px solid #088395;
         padding: 1.5rem 2rem;
         margin: 2rem 0;
         border-radius: 0 8px 8px 0;
@@ -151,7 +151,7 @@
     }
 
     .share-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 2rem;
         border-radius: 16px;
         margin: 3rem 0;
@@ -221,7 +221,7 @@
     }
 
     .related-news {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
     }
 
@@ -258,7 +258,7 @@
 
     .related-image {
         height: 150px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -272,8 +272,8 @@
 
     .related-category {
         display: inline-block;
-        background: rgba(16, 85, 201, 0.1);
-        color: #1055C9;
+        background: rgba(8, 131, 149, 0.1);
+        color: #088395;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -309,7 +309,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        color: #1055C9;
+        color: #088395;
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;

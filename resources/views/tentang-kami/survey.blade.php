@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(12, 74, 156, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -49,7 +49,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
     }
 
     .survey-card:hover {
@@ -60,7 +60,7 @@
     .survey-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -122,7 +122,7 @@
     }
 
     .survey-btn {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.8rem 2rem;
         border-radius: 30px;
@@ -138,7 +138,7 @@
 
     .survey-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 10px 25px rgba(8, 131, 149, 0.3);
         color: white;
         text-decoration: none;
     }
@@ -151,7 +151,7 @@
     }
 
     .results-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         border-radius: 20px;
         margin: 4rem 0;
@@ -186,7 +186,7 @@
 
     .result-chart {
         height: 200px;
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        background: linear-gradient(135deg, #E9F8F9, #e9ecef);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -241,8 +241,8 @@
 
     .form-control:focus {
         outline: none;
-        border-color: #1055C9;
-        box-shadow: 0 0 0 3px rgba(16, 85, 201, 0.1);
+        border-color: #088395;
+        box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.1);
     }
 
     .form-control.textarea {
@@ -277,13 +277,13 @@
     }
 
     .rating-option input[type="radio"]:checked + label {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
-        border-color: #1055C9;
+        border-color: #088395;
     }
 
     .intro-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin-bottom: 3rem;
         border-radius: 20px;
@@ -325,7 +325,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 2px;
     }
 
@@ -535,7 +535,7 @@
                     <div class="result-card" data-aos="fade-up" data-aos-delay="100">
                         <h4 class="result-title">Tingkat Kepuasan 2023</h4>
                         <div class="result-chart">
-                            <i class="fas fa-chart-pie" style="font-size: 2rem; margin-right: 1rem; color: #1055C9;"></i>
+                            <i class="fas fa-chart-pie" style="font-size: 2rem; margin-right: 1rem; color: #088395;"></i>
                             Rata-rata: 4.2/5.0
                         </div>
                         <p class="result-summary">Berdasarkan 347 responden</p>
@@ -544,7 +544,7 @@
                     <div class="result-card" data-aos="fade-up" data-aos-delay="200">
                         <h4 class="result-title">Efektivitas Pengawasan</h4>
                         <div class="result-chart">
-                            <i class="fas fa-chart-bar" style="font-size: 2rem; margin-right: 1rem; color: #1055C9;"></i>
+                            <i class="fas fa-chart-bar" style="font-size: 2rem; margin-right: 1rem; color: #088395;"></i>
                             Efektif: 78%
                         </div>
                         <p class="result-summary">Peningkatan 12% dari tahun sebelumnya</p>
@@ -553,7 +553,7 @@
                     <div class="result-card" data-aos="fade-up" data-aos-delay="300">
                         <h4 class="result-title">Transparansi Informasi</h4>
                         <div class="result-chart">
-                            <i class="fas fa-chart-line" style="font-size: 2rem; margin-right: 1rem; color: #1055C9;"></i>
+                            <i class="fas fa-chart-line" style="font-size: 2rem; margin-right: 1rem; color: #088395;"></i>
                             Skor: 4.1/5.0
                         </div>
                         <p class="result-summary">Tingkat transparansi dinilai baik</p>

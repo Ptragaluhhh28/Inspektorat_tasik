@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(12, 74, 156, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -37,7 +37,7 @@
         top: 0;
         bottom: 0;
         width: 3px;
-        background: linear-gradient(to bottom, #1055C9, #0c4a9c);
+        background: linear-gradient(to bottom, #088395, #73C8D2);
         transform: translateX(-50%);
     }
 
@@ -78,7 +78,7 @@
     }
 
     .timeline-year {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 25px;
@@ -106,14 +106,14 @@
         width: 20px;
         height: 20px;
         background: white;
-        border: 4px solid #1055C9;
+        border: 4px solid #088395;
         border-radius: 50%;
         transform: translateX(-50%);
         z-index: 2;
     }
 
     .intro-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin-bottom: 2rem;
         border-radius: 20px;

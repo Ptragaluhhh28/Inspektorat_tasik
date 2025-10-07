@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(118, 75, 162, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -49,7 +49,7 @@
     .category-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -67,13 +67,13 @@
     }
 
     .category-count {
-        color: #1055C9;
+        color: #088395;
         font-weight: 500;
         margin-bottom: 1.5rem;
     }
 
     .category-btn {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.75rem 2rem;
         border-radius: 10px;
@@ -85,72 +85,9 @@
 
     .category-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 10px 30px rgba(8, 131, 149, 0.3);
         color: white;
         text-decoration: none;
-    }
-
-    .search-section {
-        background: #f8f9fa;
-        padding: 3rem 0;
-        margin-bottom: 4rem;
-        border-radius: 20px;
-    }
-
-    .search-container {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .search-title {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 1rem;
-    }
-
-    .search-subtitle {
-        color: #666;
-        margin-bottom: 2rem;
-    }
-
-    .search-form {
-        display: flex;
-        gap: 1rem;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .search-input {
-        flex: 1;
-        padding: 1rem 1.5rem;
-        border: 2px solid #e8ecef;
-        border-radius: 12px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .search-input:focus {
-        outline: none;
-        border-color: #1055C9;
-        box-shadow: 0 0 0 3px rgba(16, 85, 201, 0.1);
-    }
-
-    .search-btn {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        border-radius: 12px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .search-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(16, 85, 201, 0.3);
     }
 
     .regulations-list {
@@ -172,7 +109,7 @@
         margin-bottom: 1.5rem;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
-        border-left: 4px solid #1055C9;
+        border-left: 4px solid #088395;
     }
 
     .regulation-item:hover {
@@ -195,7 +132,7 @@
     .regulation-number {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #1055C9;
+        color: #088395;
         margin-bottom: 0.5rem;
     }
 
@@ -234,13 +171,13 @@
     }
 
     .btn-view {
-        background: rgba(16, 85, 201, 0.1);
-        color: #1055C9;
+        background: rgba(8, 131, 149, 0.1);
+        color: #088395;
     }
 
     .btn-download {
-        background: rgba(34, 197, 94, 0.1);
-        color: #1055C9;
+        background: rgba(115, 200, 210, 0.1);
+        color: #088395;
     }
 
     .action-btn:hover {
@@ -248,13 +185,13 @@
     }
 
     .btn-view:hover {
-        background: #1055C9;
+        background: #088395;
         color: white;
         text-decoration: none;
     }
 
     .btn-download:hover {
-        background: #1055C9;
+        background: #088395;
         color: white;
         text-decoration: none;
     }
@@ -283,9 +220,18 @@
 
     .page-btn:hover,
     .page-btn.active {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         border-color: transparent;
+    }
+
+    .page-ellipsis {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        color: #666;
+        font-weight: 500;
     }
 
     @media (max-width: 768px) {
@@ -324,19 +270,6 @@
 <!-- Search Section -->
 <section class="regulations-container">
     <div class="container">
-        <div class="search-section" data-aos="fade-up">
-            <div class="search-container">
-                <h2 class="search-title">Cari Peraturan</h2>
-                <p class="search-subtitle">Temukan peraturan yang Anda butuhkan dengan mudah</p>
-                <form class="search-form">
-                    <input type="text" class="search-input" placeholder="Masukkan kata kunci...">
-                    <button type="submit" class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-
         <!-- Categories -->
         <div class="regulation-categories">
             <div class="category-card" data-aos="fade-up" data-aos-delay="100">
@@ -520,13 +453,8 @@
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" data-aos="fade-up">
-            <a href="#" class="page-btn"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="page-btn active">1</a>
-            <a href="#" class="page-btn">2</a>
-            <a href="#" class="page-btn">3</a>
-            <a href="#" class="page-btn">4</a>
-            <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+        <div class="pagination" data-aos="fade-up" id="pagination">
+            <!-- Pagination buttons akan di-generate otomatis oleh JavaScript -->
         </div>
     </div>
 </section>
@@ -534,39 +462,194 @@
 
 @push('scripts')
 <script>
-    // Search functionality
-    document.querySelector('.search-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const searchTerm = document.querySelector('.search-input').value;
-        
-        // Filter regulations based on search term
-        const regulations = document.querySelectorAll('.regulation-item');
-        
-        regulations.forEach(regulation => {
-            const title = regulation.querySelector('.regulation-title-item').textContent.toLowerCase();
-            const number = regulation.querySelector('.regulation-number').textContent.toLowerCase();
-            
-            if (title.includes(searchTerm.toLowerCase()) || number.includes(searchTerm.toLowerCase())) {
-                regulation.style.display = 'block';
-            } else {
-                regulation.style.display = 'none';
-            }
+    // Pagination configuration
+    const ITEMS_PER_PAGE = 3;
+    let currentPage = 1;
+    let allRegulations = [];
+    let filteredRegulations = [];
+
+    // Ensure function declarations are available immediately
+    function updateRegulationsDisplay() {
+        // Hide all regulations first
+        allRegulations.forEach(regulation => {
+            regulation.style.display = 'none';
         });
+
+        // Calculate which regulations to show for current page
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+        const regulationsToShow = filteredRegulations.slice(startIndex, endIndex);
+
+        // Show regulations for current page
+        regulationsToShow.forEach(regulation => {
+            regulation.style.display = 'block';
+        });
+    }
+
+    function setupPagination() {
+        const totalPages = Math.ceil(filteredRegulations.length / ITEMS_PER_PAGE);
+        const paginationContainer = document.getElementById('pagination');
+        
+        console.log('setupPagination called');
+        console.log('filteredRegulations.length:', filteredRegulations.length);
+        console.log('totalPages:', totalPages);
+        console.log('paginationContainer:', paginationContainer);
+        
+        if (!paginationContainer) {
+            console.error('Pagination container not found!');
+            return;
+        }
+        
+        if (totalPages <= 1) {
+            console.log('Hiding pagination - totalPages <= 1');
+            paginationContainer.style.display = 'none';
+            return;
+        } else {
+            console.log('Showing pagination - totalPages > 1');
+            paginationContainer.style.display = 'flex';
+        }
+
+        let paginationHTML = '';
+
+        // Previous button
+        if (currentPage > 1) {
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i></a>`;
+        }
+
+        // Page numbers
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+        
+        // Adjust start page if we're near the end
+        if (endPage - startPage < 4) {
+            startPage = Math.max(1, endPage - 4);
+        }
+
+        // First page and ellipsis
+        if (startPage > 1) {
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(1)">1</a>`;
+            if (startPage > 2) {
+                paginationHTML += `<span class="page-ellipsis">...</span>`;
+            }
+        }
+
+        // Page numbers
+        for (let i = startPage; i <= endPage; i++) {
+            const activeClass = i === currentPage ? 'active' : '';
+            paginationHTML += `<a href="#" class="page-btn ${activeClass}" onclick="changePage(${i})">${i}</a>`;
+        }
+
+        // Last page and ellipsis
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += `<span class="page-ellipsis">...</span>`;
+            }
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${totalPages})">${totalPages}</a>`;
+        }
+
+        // Next button
+        if (currentPage < totalPages) {
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage + 1})"><i class="fas fa-chevron-right"></i></a>`;
+        }
+
+        console.log('Final paginationHTML:', paginationHTML);
+        paginationContainer.innerHTML = paginationHTML;
+        console.log('Pagination setup completed');
+    }
+
+    function changePage(page) {
+        const totalPages = Math.ceil(filteredRegulations.length / ITEMS_PER_PAGE);
+        
+        if (page < 1 || page > totalPages) return;
+        
+        currentPage = page;
+        updateRegulationsDisplay();
+        setupPagination();
+        
+        // Smooth scroll to regulations list
+        document.querySelector('.regulations-list').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    // Initialize pagination - try multiple times to ensure it works
+    function initializePagination() {
+        console.log('Attempting to initialize pagination...');
+        allRegulations = Array.from(document.querySelectorAll('.regulation-item'));
+        
+        if (allRegulations.length === 0) {
+            console.warn('No regulation items found, retrying...');
+            return false;
+        }
+        
+        filteredRegulations = [...allRegulations];
+        console.log('Total regulations found:', allRegulations.length);
+        console.log('ITEMS_PER_PAGE:', ITEMS_PER_PAGE);
+        console.log('Total pages should be:', Math.ceil(allRegulations.length / ITEMS_PER_PAGE));
+        
+        updateRegulationsDisplay();
+        setupPagination();
+        return true;
+    }
+
+    // Try initialization on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            if (!initializePagination()) {
+                // If first attempt fails, try again after a longer delay
+                setTimeout(initializePagination, 500);
+            }
+        }, 100);
     });
 
-    // Category navigation
+    // Fallback: also try on window load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            if (allRegulations.length === 0) {
+                initializePagination();
+            }
+        }, 200);
+    });
+
+    // Category navigation with pagination reset
     document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             const targetCategory = this.getAttribute('href').replace('#', '');
+            
+            // Reset pagination
+            currentPage = 1;
+            
+            // In a real application, this would filter by category
+            // For now, we'll just scroll to the regulations list
+            filteredRegulations = [...allRegulations];
+            updateRegulationsDisplay();
+            setupPagination();
             
             // Scroll to regulations list
             document.querySelector('.regulations-list').scrollIntoView({
                 behavior: 'smooth'
             });
             
-            // Filter by category (this would be implemented with backend filtering in a real application)
             console.log('Filter by category:', targetCategory);
+        });
+    });
+
+    // Regulation action handlers
+    document.querySelectorAll('.action-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const regulationItem = this.closest('.regulation-item');
+            const regulationTitle = regulationItem.querySelector('.regulation-title-item').textContent;
+            const regulationNumber = regulationItem.querySelector('.regulation-number').textContent;
+            
+            if (this.classList.contains('btn-view')) {
+                alert(`Membuka: ${regulationNumber}\n${regulationTitle}`);
+            } else if (this.classList.contains('btn-download')) {
+                alert(`Mengunduh: ${regulationNumber}\n${regulationTitle}`);
+            }
         });
     });
 </script>

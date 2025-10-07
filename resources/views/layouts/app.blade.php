@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=poppins:300,400,500,600,700&display=swap" rel="stylesheet" />
                 <a href="{{ route('home') }}" class="logo">
-                <div class="logo-img" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%); border: 3px solid #1055C9; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(16, 85, 201, 0.3);">
+                <div class="logo-img" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%); border: 3px solid #088395; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(8, 131, 149, 0.3);">
                     <!-- Sky background -->
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(180deg, #87CEEB, #4682B4);"></div>
                     <!-- Mountains -->
                     <div style="position: absolute; top: 35%; left: 10%; width: 80%; height: 25%; background: linear-gradient(45deg, #228B22, #32CD32); clip-path: polygon(0% 100%, 30% 0%, 60% 40%, 100% 100%);"></div>
                     <!-- Building/City -->
-                    <div style="position: absolute; bottom: 25%; left: 25%; width: 50%; height: 20%; background: #1055C9; display: flex; align-items: center; justify-content: center;">
+                    <div style="position: absolute; bottom: 25%; left: 25%; width: 50%; height: 20%; background: #088395; display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-building" style="color: white; font-size: 12px;"></i>
                     </div>
                     <!-- Traditional pattern at bottom -->
@@ -25,7 +25,7 @@
                 </div>
                 <div class="logo-text">
                     <div style="font-size: 0.85rem; line-height: 1.1;">INSPEKTORAT</div>
-                    <div style="font-size: 0.75rem; color: #1055C9;">KOTA TASIKMALAYA</div>
+                    <div style="font-size: 0.75rem; color: #088395;">KOTA TASIKMALAYA</div>
                 </div>
             </a>Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
 
         button:focus, a:focus {
             outline: none !important;
-            box-shadow: 0 0 0 2px rgba(16, 85, 201, 0.3) !important;
+            box-shadow: 0 0 0 2px rgba(8, 131, 149, 0.3) !important;
         }
 
         *:focus {
@@ -99,14 +99,9 @@
         .logo-img {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #1055C9, #0c4a9c);
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
         }
 
         .logo-text {
@@ -160,8 +155,8 @@
         }
 
         .dropdown-item:hover {
-            background: rgba(16, 85, 201, 0.1);
-            color: #1055C9;
+            background: rgba(8, 131, 149, 0.1);
+            color: #088395;
             padding-left: 2rem;
         }
 
@@ -194,8 +189,8 @@
 
         .nav-link:hover,
         .nav-link.active {
-            color: #1055C9;
-            background: rgba(16, 85, 201, 0.1);
+            color: #088395;
+            background: rgba(8, 131, 149, 0.1);
         }
 
         .nav-link.active::after {
@@ -206,7 +201,7 @@
             transform: translateX(-50%);
             width: 6px;
             height: 6px;
-            background: #1055C9;
+            background: #088395;
             border-radius: 50%;
         }
 
@@ -215,7 +210,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: #1055C9;
+            color: #088395;
             cursor: pointer;
         }
 
@@ -258,7 +253,7 @@
         }
 
         .footer-section a:hover {
-            color: #1055C9;
+            color: #088395;
             transition: color 0.3s ease;
         }
 
@@ -271,7 +266,7 @@
         }
 
         .contact-info i {
-            color: #1055C9;
+            color: #088395;
             width: 18px;
             height: 18px;
             display: flex;
@@ -297,7 +292,7 @@
         .social-link {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, #1055C9, #0c4a9c);
+            background: linear-gradient(135deg, #088395, #73C8D2);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -313,7 +308,7 @@
 
         .social-link:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(16, 85, 201, 0.3);
+            box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.3);
         }
 
         .social-link:active {
@@ -331,7 +326,7 @@
 
         .social-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 85, 201, 0.3);
+            box-shadow: 0 6px 20px rgba(8, 131, 149, 0.3);
             color: white;
             text-decoration: none;
         }
@@ -353,7 +348,7 @@
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #1055C9, #0c4a9c);
+            background: linear-gradient(135deg, #088395, #73C8D2);
             color: white;
             text-decoration: none;
             border-radius: 10px;
@@ -365,17 +360,17 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 85, 201, 0.3);
+            box-shadow: 0 8px 25px rgba(8, 131, 149, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid #1055C9;
-            color: #1055C9;
+            border: 2px solid #088395;
+            color: #088395;
         }
 
         .btn-outline:hover {
-            background: #1055C9;
+            background: #088395;
             color: white;
         }
 
@@ -535,14 +530,17 @@
         <div class="nav-container">
             <a href="{{ route('home') }}" class="logo">
                 <div class="logo-img">
-                    <!-- Logo Kota Tasikmalaya menggunakan FontAwesome icon sebagai placeholder -->
-                    <div style="width: 35px; height: 35px; background: linear-gradient(135deg, #FFD700, #FFA500); border: 2px solid #1055C9; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                        <i class="fas fa-shield-alt" style="color: #1055C9; font-size: 18px;"></i>
+                    <!-- Logo Kota Tasikmalaya dengan fallback -->
+                    <img src="{{ asset('images/logo-tasik.png') }}" alt="Logo Kota Tasikmalaya" style="width: 45px; height: 45px; object-fit: contain;" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback icon jika gambar gagal load -->
+                    <div style="display: none; width: 45px; height: 45px; background: linear-gradient(135deg, #088395, #73C8D2); border-radius: 8px; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
                 </div>
                 <div class="logo-text">
                     <div style="font-size: 0.85rem; line-height: 1.1;">INSPEKTORAT</div>
-                    <div style="font-size: 0.75rem; color: #1055C9;">KOTA TASIKMALAYA</div>
+                    <div style="font-size: 0.75rem; color: #088395;">KOTA TASIKMALAYA</div>
                 </div>
             </a>
 

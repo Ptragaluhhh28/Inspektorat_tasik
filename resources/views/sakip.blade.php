@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(118, 75, 162, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -63,7 +63,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
     }
 
     .overview-card:hover {
@@ -74,7 +74,7 @@
     .overview-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -97,7 +97,7 @@
     }
 
     .documents-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin: 4rem 0;
         border-radius: 20px;
@@ -141,7 +141,7 @@
     .document-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -164,7 +164,7 @@
     }
 
     .document-year {
-        color: #1055C9;
+        color: #088395;
         font-weight: 500;
         font-size: 0.9rem;
     }
@@ -193,13 +193,13 @@
     }
 
     .btn-view {
-        background: rgba(16, 85, 201, 0.1);
-        color: #1055C9;
-        border: 1px solid rgba(16, 85, 201, 0.2);
+        background: rgba(8, 131, 149, 0.1);
+        color: #088395;
+        border: 1px solid rgba(8, 131, 149, 0.2);
     }
 
     .btn-download {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         border: 1px solid transparent;
     }
@@ -209,13 +209,13 @@
     }
 
     .btn-view:hover {
-        background: #1055C9;
+        background: #088395;
         color: white;
         text-decoration: none;
     }
 
     .btn-download:hover {
-        box-shadow: 0 10px 30px rgba(16, 85, 201, 0.3);
+        box-shadow: 0 10px 30px rgba(8, 131, 149, 0.3);
         color: white;
         text-decoration: none;
     }
@@ -248,7 +248,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
     }
 
     .metric-card:hover {
@@ -259,7 +259,7 @@
     .metric-value {
         font-size: 3rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -305,7 +305,7 @@
         top: 0;
         bottom: 0;
         width: 2px;
-        background: linear-gradient(to bottom, #1055C9, #0c4a9c);
+        background: linear-gradient(to bottom, #088395, #73C8D2);
         transform: translateX(-50%);
     }
 
@@ -340,7 +340,7 @@
     }
 
     .timeline-date {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
@@ -369,7 +369,7 @@
         width: 16px;
         height: 16px;
         background: white;
-        border: 3px solid #1055C9;
+        border: 3px solid #088395;
         border-radius: 50%;
         transform: translateX(-50%);
         z-index: 2;
@@ -409,7 +409,7 @@
 </style>
 @endpush
 
-@section('content")
+@section('content')
 <!-- Page Header -->
 <section class="page-header">
     <div class="container">

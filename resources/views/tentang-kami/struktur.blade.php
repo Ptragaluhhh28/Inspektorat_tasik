@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(12, 74, 156, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -56,13 +56,13 @@
     .org-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        border-color: #1055C9;
+        border-color: #088395;
     }
 
     .org-card.inspektur {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
-        border-color: #0c4a9c;
+        border-color: #73C8D2;
     }
 
     .org-card.sekretaris {
@@ -130,7 +130,7 @@
     }
 
     .intro-section {
-        background: #f8f9fa;
+        background: #E9F8F9;
         padding: 4rem 0;
         margin-bottom: 3rem;
         border-radius: 20px;
@@ -182,7 +182,7 @@
     .detail-icon {
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -258,7 +258,7 @@
                         <i class="fas fa-crown"></i>
                     </div>
                     <div class="position-title">Inspektur</div>
-                    <div class="position-name">Drs. H. Ahmad Suryadi, M.Si</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Pimpinan tertinggi Inspektorat yang bertanggung jawab kepada Walikota</div>
                 </div>
             </div>
@@ -272,7 +272,7 @@
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <div class="position-title">Sekretaris</div>
-                    <div class="position-name">Dra. Hj. Siti Nurhasanah, M.M</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Menyelenggarakan urusan administrasi dan koordinasi pelaksanaan tugas</div>
                 </div>
             </div>
@@ -286,7 +286,7 @@
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="position-title">Subbag Perencanaan & Evaluasi</div>
-                    <div class="position-name">H. Dedy Hermawan, S.Sos, M.M</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Menyusun program kerja dan evaluasi kinerja</div>
                 </div>
                 <div class="org-card subbag">
@@ -294,7 +294,7 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="position-title">Subbag Umum & Kepegawaian</div>
-                    <div class="position-name">Hj. Rika Sukmawati, S.AP, M.M</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Mengelola administrasi umum dan kepegawaian</div>
                 </div>
             </div>
@@ -308,7 +308,7 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="position-title">Inspektur Pembantu Wilayah I</div>
-                    <div class="position-name">H. Asep Sudrajat, S.E, M.M</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Mengawasi SKPD wilayah I dan pelaksanaan program</div>
                 </div>
                 <div class="org-card inspektur-pembantu">
@@ -316,7 +316,7 @@
                         <i class="fas fa-city"></i>
                     </div>
                     <div class="position-title">Inspektur Pembantu Wilayah II</div>
-                    <div class="position-name">Drs. H. Iman Sulaeman, M.M</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Mengawasi SKPD wilayah II dan pembinaan SPIP</div>
                 </div>
                 <div class="org-card inspektur-pembantu">
@@ -324,7 +324,7 @@
                         <i class="fas fa-clipboard-check"></i>
                     </div>
                     <div class="position-title">Inspektur Pembantu Investigasi</div>
-                    <div class="position-name">Dr. Hj. Yeni Karlina, S.H, M.H</div>
+                    <div class="position-name">-</div>
                     <div class="position-desc">Melakukan investigasi dan pengusutan kasus</div>
                 </div>
             </div>

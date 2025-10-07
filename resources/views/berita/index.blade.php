@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(16, 85, 201, 0.9), rgba(118, 75, 162, 0.9)),
+        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
                     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
         background-size: cover;
         color: white;
@@ -45,7 +45,7 @@
 
     .filter-btn:hover,
     .filter-btn.active {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         border-color: transparent;
         transform: translateY(-2px);
@@ -74,7 +74,7 @@
 
     .news-image {
         height: 200px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -100,8 +100,8 @@
 
     .news-category {
         display: inline-block;
-        background: rgba(16, 85, 201, 0.1);
-        color: #1055C9;
+        background: rgba(8, 131, 149, 0.1);
+        color: #088395;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -110,7 +110,7 @@
     }
 
     .news-date {
-        color: #1055C9;
+        color: #088395;
         font-size: 0.9rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -142,7 +142,7 @@
     }
 
     .news-link {
-        color: #1055C9;
+        color: #088395;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -172,7 +172,7 @@
 
     .featured-image {
         height: 300px;
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -185,7 +185,7 @@
     }
 
     .featured-badge {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 20px;
@@ -219,7 +219,7 @@
 
     .page-btn:hover,
     .page-btn.active {
-        background: linear-gradient(135deg, #1055C9, #0c4a9c);
+        background: linear-gradient(135deg, #088395, #73C8D2);
         color: white;
         border-color: transparent;
     }
@@ -285,7 +285,7 @@
                     <h2 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">
                         Rapat Koordinasi Evaluasi SPI 2025 dan Pencegahan Korupsi di Pemerintah Kota Tasikmalaya
                     </h2>
-                    <div style="color: #1055C9; font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="color: #088395; font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-calendar"></i> 07 AGUSTUS 2025
                     </div>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 1.5rem;">
@@ -416,13 +416,8 @@
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" data-aos="fade-up">
-            <a href="#" class="page-btn"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="page-btn active">1</a>
-            <a href="#" class="page-btn">2</a>
-            <a href="#" class="page-btn">3</a>
-            <a href="#" class="page-btn">4</a>
-            <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+        <div class="pagination" data-aos="fade-up" id="pagination">
+            <!-- Pagination buttons akan di-generate otomatis oleh JavaScript -->
         </div>
     </div>
 </section>
@@ -430,7 +425,91 @@
 
 @push('scripts')
 <script>
-    // Filter functionality
+    // Pagination configuration
+    const ITEMS_PER_PAGE = 3;
+    let currentPage = 1;
+    let allNewsCards = [];
+    let filteredNewsCards = [];
+    let isFilterActive = false;
+
+    // Initialize pagination
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            allNewsCards = Array.from(document.querySelectorAll('.news-card'));
+            filteredNewsCards = [...allNewsCards];
+            updateNewsDisplay();
+            setupPagination();
+        }, 100);
+    });
+
+    function updateNewsDisplay() {
+        // Hide all news cards first
+        allNewsCards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Calculate which cards to show for current page
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+        const cardsToShow = filteredNewsCards.slice(startIndex, endIndex);
+
+        // Show cards for current page
+        cardsToShow.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+
+    function setupPagination() {
+        const totalPages = Math.ceil(filteredNewsCards.length / ITEMS_PER_PAGE);
+        const paginationContainer = document.getElementById('pagination');
+        
+        if (!paginationContainer) return;
+        
+        if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            return;
+        } else {
+            paginationContainer.style.display = 'flex';
+        }
+
+        let paginationHTML = '';
+
+        // Previous button
+        if (currentPage > 1) {
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i></a>`;
+        }
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const activeClass = i === currentPage ? 'active' : '';
+            paginationHTML += `<a href="#" class="page-btn ${activeClass}" onclick="changePage(${i})">${i}</a>`;
+        }
+
+        // Next button
+        if (currentPage < totalPages) {
+            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage + 1})"><i class="fas fa-chevron-right"></i></a>`;
+        }
+
+        paginationContainer.innerHTML = paginationHTML;
+    }
+
+    function changePage(page) {
+        const totalPages = Math.ceil(filteredNewsCards.length / ITEMS_PER_PAGE);
+        
+        if (page < 1 || page > totalPages) return;
+        
+        currentPage = page;
+        updateNewsDisplay();
+        setupPagination();
+        
+        // Smooth scroll to news section
+        document.querySelector('.news-grid').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    // Filter functionality with pagination integration
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -441,22 +520,24 @@
             // Add active class to clicked button
             this.classList.add('active');
             
-            // Here you can add filtering logic
-            // For now, we'll just show/hide all cards
+            // Reset pagination to first page
+            currentPage = 1;
+            
             const category = this.textContent.toLowerCase();
             
-            document.querySelectorAll('.news-card').forEach(card => {
-                if (category === 'semua') {
-                    card.style.display = 'block';
-                } else {
+            if (category === 'semua') {
+                isFilterActive = false;
+                filteredNewsCards = [...allNewsCards];
+            } else {
+                isFilterActive = true;
+                filteredNewsCards = allNewsCards.filter(card => {
                     const cardCategory = card.querySelector('.news-category').textContent.toLowerCase();
-                    if (cardCategory.includes(category)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
+                    return cardCategory.includes(category);
+                });
+            }
+            
+            updateNewsDisplay();
+            setupPagination();
         });
     });
 </script>
