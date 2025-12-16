@@ -5,11 +5,9 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
     }
 
@@ -49,7 +47,7 @@
     .category-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -67,13 +65,13 @@
     }
 
     .category-count {
-        color: #088395;
+        color: #1e40af;
         font-weight: 500;
         margin-bottom: 1.5rem;
     }
 
     .category-btn {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         padding: 0.75rem 2rem;
         border-radius: 10px;
@@ -109,7 +107,7 @@
         margin-bottom: 1.5rem;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
-        border-left: 4px solid #088395;
+        border-left: 4px solid #1e40af;
     }
 
     .regulation-item:hover {
@@ -132,7 +130,7 @@
     .regulation-number {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #088395;
+        color: #1e40af;
         margin-bottom: 0.5rem;
     }
 
@@ -172,12 +170,12 @@
 
     .btn-view {
         background: rgba(8, 131, 149, 0.1);
-        color: #088395;
+        color: #1e40af;
     }
 
     .btn-download {
         background: rgba(115, 200, 210, 0.1);
-        color: #088395;
+        color: #1e40af;
     }
 
     .action-btn:hover {
@@ -185,13 +183,13 @@
     }
 
     .btn-view:hover {
-        background: #088395;
+        background: #1e40af;
         color: white;
         text-decoration: none;
     }
 
     .btn-download:hover {
-        background: #088395;
+        background: #1e40af;
         color: white;
         text-decoration: none;
     }
@@ -220,7 +218,7 @@
 
     .page-btn:hover,
     .page-btn.active {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border-color: transparent;
     }

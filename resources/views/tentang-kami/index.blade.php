@@ -5,11 +5,9 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
     }
 
@@ -54,7 +52,7 @@
     .vm-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -107,7 +105,7 @@
     }
 
     .position-name {
-        color: #088395;
+        color: #1e40af;
         font-weight: 500;
     }
 
@@ -158,7 +156,7 @@
                 </a>
             </div>
             <div data-aos="fade-left">
-                <div style="background: linear-gradient(135deg, #088395, #73C8D2); border-radius: 20px; padding: 3rem; color: white; text-align: center;">
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 20px; padding: 3rem; color: white; text-align: center;">
                     <i class="fas fa-shield-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Mengawal Integritas</h3>
                     <p style="opacity: 0.9; line-height: 1.6;">
@@ -269,25 +267,25 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
             <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-handshake" style="font-size: 2.5rem; color: #088395; margin-bottom: 1rem;"></i>
+                <i class="fas fa-handshake" style="font-size: 2.5rem; color: #1e40af; margin-bottom: 1rem;"></i>
                 <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Integritas</h4>
                 <p style="color: #666;">Konsisten dalam menjalankan tugas dengan jujur dan bertanggung jawab</p>
             </div>
 
             <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-users" style="font-size: 2.5rem; color: #088395; margin-bottom: 1rem;"></i>
+                <i class="fas fa-users" style="font-size: 2.5rem; color: #1e40af; margin-bottom: 1rem;"></i>
                 <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Profesional</h4>
                 <p style="color: #666;">Kompeten, objektif, dan mengutamakan kualitas dalam setiap kegiatan</p>
             </div>
 
             <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-balance-scale" style="font-size: 2.5rem; color: #088395; margin-bottom: 1rem;"></i>
+                <i class="fas fa-balance-scale" style="font-size: 2.5rem; color: #1e40af; margin-bottom: 1rem;"></i>
                 <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Independen</h4>
                 <p style="color: #666;">Bebas dari pengaruh dan tekanan dalam melaksanakan pengawasan</p>
             </div>
 
             <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: #088395; margin-bottom: 1rem;"></i>
+                <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: #1e40af; margin-bottom: 1rem;"></i>
                 <h4 style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">Inovatif</h4>
                 <p style="color: #666;">Terus mengembangkan metode dan pendekatan pengawasan yang modern</p>
             </div>

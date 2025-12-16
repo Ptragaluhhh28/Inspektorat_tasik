@@ -10,25 +10,11 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=poppins:300,400,500,600,700&display=swap" rel="stylesheet" />
-                <a href="{{ route('home') }}" class="logo">
-                <div class="logo-img" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%); border: 3px solid #088395; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(8, 131, 149, 0.3);">
-                    <!-- Sky background -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(180deg, #87CEEB, #4682B4);"></div>
-                    <!-- Mountains -->
-                    <div style="position: absolute; top: 35%; left: 10%; width: 80%; height: 25%; background: linear-gradient(45deg, #228B22, #32CD32); clip-path: polygon(0% 100%, 30% 0%, 60% 40%, 100% 100%);"></div>
-                    <!-- Building/City -->
-                    <div style="position: absolute; bottom: 25%; left: 25%; width: 50%; height: 20%; background: #088395; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-building" style="color: white; font-size: 12px;"></i>
-                    </div>
-                    <!-- Traditional pattern at bottom -->
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 25%; background: repeating-linear-gradient(90deg, #FFD700 0px, #FFD700 4px, #FFA500 4px, #FFA500 8px);"></div>
-                </div>
-                <div class="logo-text">
-                    <div style="font-size: 0.85rem; line-height: 1.1;">INSPEKTORAT</div>
-                    <div style="font-size: 0.75rem; color: #088395;">KOTA TASIKMALAYA</div>
-                </div>
-            </a>Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Fallback Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet" crossorigin="anonymous">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -47,7 +33,7 @@
 
         button:focus, a:focus {
             outline: none !important;
-            box-shadow: 0 0 0 2px rgba(8, 131, 149, 0.3) !important;
+            box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.3) !important;
         }
 
         *:focus {
@@ -155,8 +141,8 @@
         }
 
         .dropdown-item:hover {
-            background: rgba(8, 131, 149, 0.1);
-            color: #088395;
+            background: rgba(30, 64, 175, 0.1);
+            color: #1e40af;
             padding-left: 2rem;
         }
 
@@ -164,6 +150,43 @@
             width: 16px;
             margin-right: 0.5rem;
             font-size: 0.8rem;
+        }
+
+        /* Dropdown Arrow Animation */
+        .nav-item.dropdown .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.7rem !important;
+            margin-left: 0.3rem !important;
+        }
+
+        .nav-item.dropdown:hover .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        /* Ensure icons don't interfere with each other */
+        .nav-link i:not(.fa-chevron-down) {
+            flex-shrink: 0;
+        }
+
+        /* Fix icon stability during navigation */
+        .nav-link i {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        /* Prevent icon flickering on hover/active states */
+        .nav-link,
+        .dropdown-item {
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Smooth transitions for all navigation elements */
+        .nav-link *,
+        .dropdown-item * {
+            transition: all 0.2s ease;
         }
 
         .nav-link {
@@ -189,8 +212,8 @@
 
         .nav-link:hover,
         .nav-link.active {
-            color: #088395;
-            background: rgba(8, 131, 149, 0.1);
+            color: #1e40af;
+            background: rgba(30, 64, 175, 0.1);
         }
 
         .nav-link.active::after {
@@ -201,7 +224,7 @@
             transform: translateX(-50%);
             width: 6px;
             height: 6px;
-            background: #088395;
+            background: #1e40af;
             border-radius: 50%;
         }
 
@@ -210,7 +233,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: #088395;
+            color: #1e40af;
             cursor: pointer;
         }
 
@@ -219,7 +242,7 @@
             background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
             padding: 3rem 0 1rem;
-            margin-top: 4rem;
+            margin-top: 0;
         }
 
         .footer-container {
@@ -253,7 +276,7 @@
         }
 
         .footer-section a:hover {
-            color: #088395;
+            color: #1e40af;
             transition: color 0.3s ease;
         }
 
@@ -266,7 +289,7 @@
         }
 
         .contact-info i {
-            color: #088395;
+            color: #1e40af;
             width: 18px;
             height: 18px;
             display: flex;
@@ -292,7 +315,7 @@
         .social-link {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, #088395, #73C8D2);
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -308,7 +331,7 @@
 
         .social-link:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.3);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
         }
 
         .social-link:active {
@@ -326,7 +349,7 @@
 
         .social-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(8, 131, 149, 0.3);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
             color: white;
             text-decoration: none;
         }
@@ -348,7 +371,7 @@
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #088395, #73C8D2);
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
             color: white;
             text-decoration: none;
             border-radius: 10px;
@@ -360,17 +383,17 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(8, 131, 149, 0.3);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid #088395;
-            color: #088395;
+            border: 2px solid #1e40af;
+            color: #1e40af;
         }
 
         .btn-outline:hover {
-            background: #088395;
+            background: #1e40af;
             color: white;
         }
 
@@ -517,8 +540,20 @@
 
         /* Page Content */
         .page-content {
-            padding-top: 85px;
+            padding-top: 0;
+            margin-top: 0;
             min-height: calc(100vh - 85px);
+        }
+        
+        /* Remove any unwanted gaps */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        
+        main {
+            margin: 0;
+            padding: 0;
         }
     </style>
 
@@ -534,13 +569,13 @@
                     <img src="{{ asset('images/logo-tasik.png') }}" alt="Logo Kota Tasikmalaya" style="width: 45px; height: 45px; object-fit: contain;" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <!-- Fallback icon jika gambar gagal load -->
-                    <div style="display: none; width: 45px; height: 45px; background: linear-gradient(135deg, #088395, #73C8D2); border-radius: 8px; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    <div style="display: none; width: 45px; height: 45px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 8px; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                 </div>
                 <div class="logo-text">
                     <div style="font-size: 0.85rem; line-height: 1.1;">INSPEKTORAT</div>
-                    <div style="font-size: 0.75rem; color: #088395;">KOTA TASIKMALAYA</div>
+                    <div style="font-size: 0.75rem; color: #1e40af;">KOTA TASIKMALAYA</div>
                 </div>
             </a>
 
@@ -551,7 +586,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="{{ route('tentang-kami') }}" class="nav-link {{ request()->routeIs('tentang-kami*') || request()->routeIs('sejarah') || request()->routeIs('tupoksi') || request()->routeIs('struktur') || request()->routeIs('dukungan') || request()->routeIs('statistik') || request()->routeIs('survey') ? 'active' : '' }}">
+                    <a href="{{ route('tentang-kami') }}" class="nav-link {{ request()->routeIs('tentang-kami*') || request()->routeIs('sejarah') || request()->routeIs('tupoksi') || request()->routeIs('struktur') || request()->routeIs('statistik') ? 'active' : '' }}">
                         <i class="fas fa-users"></i> Tentang Kami <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -567,15 +602,15 @@
                         <a href="{{ route('struktur') }}" class="dropdown-item {{ request()->routeIs('struktur') ? 'active' : '' }}">
                             <i class="fas fa-sitemap"></i> Struktur Organisasi
                         </a>
-                        <a href="{{ route('dukungan') }}" class="dropdown-item {{ request()->routeIs('dukungan') ? 'active' : '' }}">
+                        {{-- <a href="{{ route('dukungan') }}" class="dropdown-item {{ request()->routeIs('dukungan') ? 'active' : '' }}">
                             <i class="fas fa-hands-helping"></i> Dukungan
-                        </a>
+                        </a> --}}
                         <a href="{{ route('statistik') }}" class="dropdown-item {{ request()->routeIs('statistik') ? 'active' : '' }}">
                             <i class="fas fa-chart-bar"></i> Statistik
                         </a>
-                        <a href="{{ route('survey') }}" class="dropdown-item {{ request()->routeIs('survey') ? 'active' : '' }}">
+                        {{-- <a href="{{ route('survey') }}" class="dropdown-item {{ request()->routeIs('survey') ? 'active' : '' }}">
                             <i class="fas fa-poll"></i> Survey
-                        </a>
+                        </a> --}}
                     </div>
                 </li>
                 <li class="nav-item">
@@ -690,14 +725,44 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            });
+        }
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.nav-item.dropdown').forEach(dropdown => {
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            const chevronIcon = dropdown.querySelector('.fa-chevron-down');
+            
+            dropdown.addEventListener('mouseenter', () => {
+                if (dropdownMenu) {
+                    dropdownMenu.style.opacity = '1';
+                    dropdownMenu.style.visibility = 'visible';
+                    dropdownMenu.style.transform = 'translateY(0)';
+                }
+                if (chevronIcon) {
+                    chevronIcon.style.transform = 'rotate(180deg)';
+                }
+            });
+            
+            dropdown.addEventListener('mouseleave', () => {
+                if (dropdownMenu) {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.transform = 'translateY(-10px)';
+                }
+                if (chevronIcon) {
+                    chevronIcon.style.transform = 'rotate(0deg)';
+                }
+            });
         });
 
         // Navbar scroll effect
@@ -722,6 +787,33 @@
                     });
                 }
             });
+        });
+
+        // Ensure Font Awesome icons are properly loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if Font Awesome is loaded
+            const testIcon = document.createElement('i');
+            testIcon.className = 'fas fa-home';
+            testIcon.style.display = 'none';
+            document.body.appendChild(testIcon);
+            
+            const computedStyle = window.getComputedStyle(testIcon, '::before');
+            if (computedStyle.content === 'none' || computedStyle.content === '') {
+                console.warn('Font Awesome may not be loaded properly');
+                // Fallback loading
+                const faLink = document.createElement('link');
+                faLink.rel = 'stylesheet';
+                faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+                document.head.appendChild(faLink);
+            }
+            document.body.removeChild(testIcon);
+        });
+
+        // Fix icon rendering issues
+        document.querySelectorAll('.nav-link i, .dropdown-item i').forEach(icon => {
+            icon.style.fontFamily = '"Font Awesome 6 Free", "Font Awesome 6 Brands"';
+            icon.style.fontWeight = '900';
+            icon.style.fontStyle = 'normal';
         });
 
         // Fix social media links blur issue

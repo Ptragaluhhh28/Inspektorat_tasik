@@ -5,12 +5,13 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
+        
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
+        
     }
 
     .page-title {
@@ -50,7 +51,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
     }
 
     .stat-card:hover {
@@ -61,7 +62,7 @@
     .stat-number {
         font-size: 3rem;
         font-weight: 700;
-        color: #088395;
+        color: #1e40af;
         margin-bottom: 0.5rem;
         display: block;
     }
@@ -151,7 +152,7 @@
     .progress-percentage {
         font-size: 1.1rem;
         font-weight: 700;
-        color: #088395;
+        color: #1e40af;
     }
 
     .progress-bar-container {
@@ -163,7 +164,7 @@
 
     .progress-bar {
         height: 100%;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 10px;
         transition: width 1s ease;
     }
@@ -245,7 +246,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 2px;
     }
 
@@ -268,14 +269,14 @@
     }
 
     .filter-tab.active {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
-        border-color: #088395;
+        border-color: #1e40af;
     }
 
     .filter-tab:hover {
-        border-color: #088395;
-        color: #088395;
+        border-color: #1e40af;
+        color: #1e40af;
     }
 
     .filter-tab.active:hover {
@@ -383,7 +384,7 @@
         <div class="chart-container" data-aos="fade-up">
             <h3 class="chart-title">Tren Kegiatan Pengawasan 5 Tahun Terakhir</h3>
             <div class="chart-placeholder">
-                <i class="fas fa-chart-line" style="font-size: 3rem; margin-right: 1rem; color: #088395;"></i>
+                <i class="fas fa-chart-line" style="font-size: 3rem; margin-right: 1rem; color: #1e40af;"></i>
                 Grafik Tren Pengawasan 2020-2024
             </div>
         </div>
@@ -439,7 +440,7 @@
                 <div class="chart-container" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="chart-title">Jenis Pengawasan 2024</h3>
                     <div class="chart-placeholder">
-                        <i class="fas fa-chart-pie" style="font-size: 3rem; margin-right: 1rem; color: #088395;"></i>
+                        <i class="fas fa-chart-pie" style="font-size: 3rem; margin-right: 1rem; color: #1e40af;"></i>
                         Diagram Pie Jenis Pengawasan
                     </div>
                 </div>
@@ -448,7 +449,7 @@
                 <div class="chart-container" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="chart-title">Status Tindak Lanjut</h3>
                     <div class="chart-placeholder">
-                        <i class="fas fa-chart-bar" style="font-size: 3rem; margin-right: 1rem; color: #088395;"></i>
+                        <i class="fas fa-chart-bar" style="font-size: 3rem; margin-right: 1rem; color: #1e40af;"></i>
                         Grafik Batang Status Tindak Lanjut
                     </div>
                 </div>
@@ -542,7 +543,7 @@
         <div class="chart-container" data-aos="fade-up">
             <h3 class="chart-title">Perbandingan Kinerja dengan Target</h3>
             <div class="chart-placeholder">
-                <i class="fas fa-chart-area" style="font-size: 3rem; margin-right: 1rem; color: #088395;"></i>
+                <i class="fas fa-chart-area" style="font-size: 3rem; margin-right: 1rem; color: #1e40af;"></i>
                 Grafik Area Perbandingan Target vs Realisasi
             </div>
         </div>

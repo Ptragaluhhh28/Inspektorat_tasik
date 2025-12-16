@@ -5,11 +5,10 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         background-size: cover;
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
     }
 
@@ -18,6 +17,7 @@
         font-weight: 700;
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: -0.02em;
     }
 
     .sakip-container {
@@ -63,7 +63,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
     }
 
     .overview-card:hover {
@@ -74,7 +74,7 @@
     .overview-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -97,7 +97,7 @@
     }
 
     .documents-section {
-        background: #E9F8F9;
+        background: #eff6ff;
         padding: 4rem 0;
         margin: 4rem 0;
         border-radius: 20px;
@@ -141,7 +141,7 @@
     .document-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -164,7 +164,7 @@
     }
 
     .document-year {
-        color: #088395;
+        color: #1e40af;
         font-weight: 500;
         font-size: 0.9rem;
     }
@@ -194,12 +194,12 @@
 
     .btn-view {
         background: rgba(8, 131, 149, 0.1);
-        color: #088395;
+        color: #1e40af;
         border: 1px solid rgba(8, 131, 149, 0.2);
     }
 
     .btn-download {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border: 1px solid transparent;
     }
@@ -209,7 +209,7 @@
     }
 
     .btn-view:hover {
-        background: #088395;
+        background: #1e40af;
         color: white;
         text-decoration: none;
     }
@@ -248,7 +248,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
     }
 
     .metric-card:hover {
@@ -259,7 +259,7 @@
     .metric-value {
         font-size: 3rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -305,7 +305,7 @@
         top: 0;
         bottom: 0;
         width: 2px;
-        background: linear-gradient(to bottom, #088395, #73C8D2);
+        background: linear-gradient(to bottom, #1e40af, #3b82f6);
         transform: translateX(-50%);
     }
 
@@ -340,7 +340,7 @@
     }
 
     .timeline-date {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
@@ -369,7 +369,7 @@
         width: 16px;
         height: 16px;
         background: white;
-        border: 3px solid #088395;
+        border: 3px solid #1e40af;
         border-radius: 50%;
         transform: translateX(-50%);
         z-index: 2;

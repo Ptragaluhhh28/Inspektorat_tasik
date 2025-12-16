@@ -5,11 +5,9 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
     }
 
@@ -45,7 +43,7 @@
 
     .filter-btn:hover,
     .filter-btn.active {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border-color: transparent;
         transform: translateY(-2px);
@@ -74,7 +72,7 @@
 
     .news-image {
         height: 200px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -101,7 +99,7 @@
     .news-category {
         display: inline-block;
         background: rgba(8, 131, 149, 0.1);
-        color: #088395;
+        color: #1e40af;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -110,7 +108,7 @@
     }
 
     .news-date {
-        color: #088395;
+        color: #1e40af;
         font-size: 0.9rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -142,7 +140,7 @@
     }
 
     .news-link {
-        color: #088395;
+        color: #1e40af;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -172,7 +170,7 @@
 
     .featured-image {
         height: 300px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -185,7 +183,7 @@
     }
 
     .featured-badge {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 20px;
@@ -219,7 +217,7 @@
 
     .page-btn:hover,
     .page-btn.active {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border-color: transparent;
     }
@@ -275,150 +273,81 @@
         </div>
 
         <!-- Featured News -->
+        @if($berita->count() > 0)
         <div class="featured-news" data-aos="fade-up" data-aos-delay="100">
             <div class="featured-card">
                 <div class="featured-image">
-                    <i class="fas fa-star"></i>
+                    @if($berita->first()->gambar)
+                        <img src="{{ asset('images/berita/' . $berita->first()->gambar) }}" 
+                             alt="{{ $berita->first()->judul }}" 
+                             style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        <i class="fas fa-star"></i>
+                    @endif
                 </div>
                 <div class="featured-content">
                     <span class="featured-badge">Berita Utama</span>
                     <h2 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">
-                        Rapat Koordinasi Evaluasi SPI 2025 dan Pencegahan Korupsi di Pemerintah Kota Tasikmalaya
+                        {{ $berita->first()->judul }}
                     </h2>
-                    <div style="color: #088395; font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-calendar"></i> 07 AGUSTUS 2025
+                    <div style="color: #1e40af; font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-calendar"></i> {{ $berita->first()->created_at->format('d F Y') }}
                     </div>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 1.5rem;">
-                        Tasikmalaya, 5 Agustus 2025 — Pemerintah Kota Tasikmalaya melalui Inspektorat Daerah menggelar Rapat Koordinasi Evaluasi Rencana Aksi Pencegahan Korupsi dan Penguatan Sistem Pengendalian Intern untuk meningkatkan tata kelola pemerintahan yang baik dan bersih.
+                        {{ Str::limit($berita->first()->excerpt, 200) }}
                     </p>
-                    <a href="{{ route('berita.detail', 'rapat-koordinasi-evaluasi-spi-2025') }}" class="btn">
+                    <a href="{{ route('berita.detail', $berita->first()->slug) }}" class="btn">
                         <i class="fas fa-arrow-right"></i> Baca Selengkapnya
                     </a>
                 </div>
             </div>
         </div>
+        @endif
 
         <!-- News Grid -->
         <div class="news-grid">
-            <article class="news-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="news-image">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Kegiatan</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 29 JULI 2025
+            @if($berita->count() > 1)
+                @foreach($berita->skip(1) as $index => $item)
+                <article class="news-card" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                    <div class="news-image">
+                        @if($item->gambar)
+                            <img src="{{ asset('images/berita/' . $item->gambar) }}" 
+                                 alt="{{ $item->judul }}" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        @else
+                            <i class="fas fa-newspaper"></i>
+                        @endif
                     </div>
-                    <h3 class="news-title">Apel Pagi dan Penyampaian Program Strategis Pemerintah Kota Tasikmalaya 2025-2029</h3>
-                    <p class="news-excerpt">
-                        Inspektorat Daerah Kota Tasikmalaya melaksanakan apel pagi yang dirangkaikan dengan penyampaian Program Strategis Pemerintah Kota Tasikmalaya untuk periode 2025-2029 di lingkungan Inspektorat Daerah.
-                    </p>
-                    <a href="{{ route('berita.detail', 'apel-pagi-program-strategis') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="news-image">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Bantuan Sosial</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 29 MEI 2020
+                    <div class="news-content">
+                        <span class="news-category">Berita</span>
+                        <div class="news-date">
+                            <i class="fas fa-calendar"></i> {{ $item->created_at->format('d M Y') }}
+                        </div>
+                        <h3 class="news-title">{{ $item->judul }}</h3>
+                        <p class="news-excerpt">
+                            {{ Str::limit($item->excerpt, 120) }}
+                        </p>
+                        <a href="{{ route('berita.detail', $item->slug) }}" class="news-link">
+                            Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <h3 class="news-title">Penyerahan Bantuan Sosial dari BAZNAS Kota Tasikmalaya untuk Mustahik Terdampak COVID-19</h3>
-                    <p class="news-excerpt">
-                        Bertempat di Bale Kota Tasikmalaya, Wali Kota Tasikmalaya menghadiri penyerahan bantuan sosial dari Baznas Kota Tasikmalaya bagi mustahik yang terdampak pandemi COVID-19.
-                    </p>
-                    <a href="{{ route('berita.detail', 'bantuan-sosial-baznas') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
+                </article>
+                @endforeach
+            @else
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-newspaper fa-4x text-muted mb-3"></i>
+                    <h5 class="text-muted">Belum ada berita tersedia</h5>
+                    <p class="text-muted">Silakan kembali lagi nanti untuk membaca berita terbaru.</p>
                 </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="news-image">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Audit</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 15 JULI 2025
-                    </div>
-                    <h3 class="news-title">Pelaksanaan Audit Kinerja pada OPD Lingkup Pemerintah Kota Tasikmalaya</h3>
-                    <p class="news-excerpt">
-                        Inspektorat Kota Tasikmalaya melaksanakan audit kinerja pada berbagai Organisasi Perangkat Daerah untuk memastikan efektivitas dan efisiensi pengelolaan anggaran daerah.
-                    </p>
-                    <a href="{{ route('berita.detail', 'audit-kinerja-opd') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="news-image">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Sosialisasi</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 10 JULI 2025
-                    </div>
-                    <h3 class="news-title">Sosialisasi Sistem Pengendalian Intern Pemerintah (SPIP) kepada Seluruh ASN</h3>
-                    <p class="news-excerpt">
-                        Kegiatan sosialisasi SPIP bertujuan untuk meningkatkan pemahaman ASN tentang pentingnya pengendalian intern dalam mencegah terjadinya penyimpangan dan meningkatkan kualitas pelayanan publik.
-                    </p>
-                    <a href="{{ route('berita.detail', 'sosialisasi-spip') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="news-image">
-                    <i class="fas fa-award"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Pengumuman</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 05 JULI 2025
-                    </div>
-                    <h3 class="news-title">Pengumuman Hasil Evaluasi Kinerja Tahunan Inspektorat Kota Tasikmalaya</h3>
-                    <p class="news-excerpt">
-                        Inspektorat Kota Tasikmalaya telah menyelesaikan evaluasi kinerja tahunan dengan hasil yang memuaskan. Berbagai program dan kegiatan telah terlaksana sesuai dengan target yang ditetapkan.
-                    </p>
-                    <a href="{{ route('berita.detail', 'hasil-evaluasi-kinerja') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="news-image">
-                    <i class="fas fa-clipboard-check"></i>
-                </div>
-                <div class="news-content">
-                    <span class="news-category">Kegiatan</span>
-                    <div class="news-date">
-                        <i class="fas fa-calendar"></i> 01 JULI 2025
-                    </div>
-                    <h3 class="news-title">Workshop Peningkatan Kapasitas Auditor Internal Pemerintah Daerah</h3>
-                    <p class="news-excerpt">
-                        Workshop ini bertujuan untuk meningkatkan kompetensi dan profesionalisme auditor internal dalam melaksanakan fungsi pengawasan yang lebih efektif dan berkualitas.
-                    </p>
-                    <a href="{{ route('berita.detail', 'workshop-auditor') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
+            @endif
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" data-aos="fade-up" id="pagination">
-            <!-- Pagination buttons akan di-generate otomatis oleh JavaScript -->
+        @if($berita->hasPages())
+        <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
+            {{ $berita->links() }}
         </div>
+        @endif
     </div>
 </section>
 @endsection

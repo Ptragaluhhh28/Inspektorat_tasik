@@ -3,12 +3,9 @@
 @section('title', 'Kontak - Inspektorat Kota Tasikmalaya')
 
 @push('styles')
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+<!-- Google Maps CSS and Fonts -->
 <style>
-    /* Remove any default margins/padding that might create white space */
+    /* Hapus margin/padding default apa pun yang mungkin membuat spasi */
     body {
         margin: 0;
         padding: 0;
@@ -19,14 +16,27 @@
         padding: 0;
     }
 
+    /* Pastikan tidak ada spasi di atas header halaman */
+    .page-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Paksa halaman untuk memulai segera setelah navbar */
+    section:first-of-type {
+         !important;
+        position: relative;
+        top: 0;
+    }
+
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 6rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
-        margin-top: 0;
+        margin-bottom: 0;
+        position: relative;
+        top: 0;
     }
 
     .page-title {
@@ -37,7 +47,8 @@
     }
 
     .contact-container {
-        padding: 4rem 0;
+        padding: 3rem 0 2rem;
+        margin-bottom: 0;
     }
 
     .contact-info-grid {
@@ -68,23 +79,23 @@
         border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
-        border: 1px solid rgba(8, 131, 149, 0.1);
+        border: 1px solid rgba(30, 64, 175, 0.1);
         height: 100%;
         min-height: 160px;
-        overflow: hidden; /* Prevents any content from overflowing */
+        overflow: hidden; /* Mencegah konten apa pun meluap */
         word-wrap: break-word;
     }
 
     .contact-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 16px 48px rgba(8, 131, 149, 0.2);
-        border-color: rgba(8, 131, 149, 0.3);
+        box-shadow: 0 16px 48px rgba(30, 64, 175, 0.2);
+        border-color: rgba(30, 64, 175, 0.3);
     }
 
     .contact-icon {
         width: 56px;
         height: 56px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -92,13 +103,13 @@
         color: white;
         font-size: 1.4rem;
         flex-shrink: 0;
-        box-shadow: 0 4px 16px rgba(8, 131, 149, 0.3);
+        box-shadow: 0 4px 16px rgba(30, 64, 175, 0.3);
     }
 
     .contact-details {
         flex: 1;
-        min-width: 0; /* Allows flex item to shrink below content size */
-        overflow: hidden; /* Prevents overflow */
+        min-width: 0; /* Memungkinkan item fleksibel menyusut di bawah ukuran konten */
+        overflow: hidden; /* Mencegah luapan */
     }
 
     .contact-details h4 {
@@ -106,7 +117,7 @@
         font-weight: 600;
         color: #2c3e50;
         margin-bottom: 0.8rem;
-        border-bottom: 2px solid #088395;
+        border-bottom: 2px solid #1e40af;
         padding-bottom: 0.5rem;
         display: inline-block;
         word-wrap: break-word;
@@ -125,7 +136,7 @@
     }
 
     .contact-details a {
-        color: #088395;
+        color: #1e40af;
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
@@ -137,11 +148,11 @@
     }
 
     .contact-details a:hover {
-        color: #73C8D2;
-        border-bottom-color: #73C8D2;
+        color: #3b82f6;
+        border-bottom-color: #3b82f6;
     }
 
-    /* Responsive Design */
+    /* Desain Responsif */
     @media (max-width: 768px) {
         .contact-info-grid {
             grid-template-columns: 1fr;
@@ -218,8 +229,8 @@
     .form-select:focus,
     .form-textarea:focus {
         outline: none;
-        border-color: #088395;
-        box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.1);
+        border-color: #1e40af;
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
     }
 
     .form-textarea {
@@ -229,7 +240,7 @@
 
     .form-btn {
         width: 100%;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border: none;
         padding: 1rem 2rem;
@@ -242,13 +253,14 @@
 
     .form-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(8, 131, 149, 0.3);
+        box-shadow: 0 15px 40px rgba(30, 64, 175, 0.3);
     }
 
     .map-section {
         background: #E9F8F9;
-        padding: 4rem 0;
+        padding: 3rem 0 2rem;
         margin-top: 2rem;
+        margin-bottom: 4rem;
         border-radius: 20px;
     }
 
@@ -269,24 +281,133 @@
         position: relative;
     }
 
+    /* Hide Google Maps controls */
+    .map-container iframe {
+        position: relative;
+    }
+
+    /* Hide the "View larger map" link and other controls */
+    .gm-style .gm-style-iw-chr {
+        display: none !important;
+    }
+
+    .gm-style .gm-style-iw-tc {
+        display: none !important;
+    }
+
+    /* Hide Google logo and terms */
+    .map-container iframe::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 20px;
+        background: white;
+        z-index: 1000;
+    }
+
     #map {
         height: 100%;
         width: 100%;
         border-radius: 16px;
+        position: relative;
     }
 
-    .leaflet-popup-content-wrapper {
+    /* Custom Zoom Controls */
+    .custom-zoom-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .zoom-btn {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid rgba(0,0,0,0.15);
         border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
-    .leaflet-popup-content {
-        margin: 15px;
+    .zoom-btn:hover {
+        background: rgba(30, 64, 175, 0.1);
+        color: #1e40af;
+        border-color: #1e40af;
+        transform: scale(1.05);
+    }
+
+    .zoom-btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    }
+
+    .zoom-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Map Control Enhancements */
+    .map-controls {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 1000;
+        display: flex;
+        gap: 8px;
+    }
+
+    .map-control-btn {
+        background: white;
+        border: 2px solid rgba(0,0,0,0.2);
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #333;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .map-control-btn:hover {
+        background: #1e40af;
+        color: white;
+        border-color: #1e40af;
+    }
+
+    /* Google Maps Info Window Styles */
+    .gm-style .gm-style-iw-c {
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    .gm-style .gm-style-iw-d {
+        overflow: auto !important;
+    }
+
+    .popup-content {
         font-family: inherit;
+        padding: 10px;
     }
 
     .popup-content h4 {
         margin: 0 0 8px 0;
-        color: #088395;
+        color: #1e40af;
         font-weight: 600;
     }
 
@@ -295,6 +416,34 @@
         font-size: 14px;
         color: #666;
     }
+
+    /* Google Maps Controls */
+    .gm-style .gm-style-cc {
+        display: none;
+    }
+
+    .gm-style .gmnoprint {
+        display: block;
+    }
+
+    .gm-style-mtc {
+        display: none;
+    }
+
+    /* Fallback Map Styles */
+    #map iframe {
+        border-radius: 16px;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .map-error-container {
+        position: relative;
+        height: 100%;
+        min-height: 400px;
+    }
+
+
 
     .info-card {
         background: white;
@@ -305,7 +454,7 @@
     }
 
     .info-card h4 {
-        color: #088395;
+        color: #1e40af;
         margin-bottom: 1rem;
         font-size: 1.2rem;
     }
@@ -320,7 +469,7 @@
         line-height: 1.6;
     }
 
-    /* Responsive Design */
+    /* Desain Responsif */
     @media (max-width: 768px) {
         .contact-info-grid {
             grid-template-columns: 1fr;
@@ -344,7 +493,7 @@
         }
         
         .map-container {
-            height: 300px;
+            height: 350px;
         }
         
         .page-title {
@@ -354,10 +503,54 @@
         .section-title {
             font-size: 2rem;
         }
+        
+        /* Mobile map controls */
+        .custom-zoom-controls {
+            top: 15px;
+            right: 15px;
+        }
+        
+        .zoom-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+        }
+        
+        .map-controls {
+            bottom: 15px;
+            left: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .map-control-btn {
+            padding: 6px 8px;
+            font-size: 11px;
+        }
+        
+        .map-control-btn i {
+            margin-right: 2px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .map-container {
+            height: 280px;
+        }
+        
+        .map-controls {
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .map-control-btn {
+            padding: 4px 6px;
+            font-size: 10px;
+        }
     }
 
     .office-hours {
-        margin-top: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
     }
 
     .hours-grid {
@@ -384,7 +577,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
     }
 
     .hours-card:hover {
@@ -395,7 +588,7 @@
     .hours-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -424,13 +617,15 @@
     .social-links {
         display: flex;
         justify-content: center;
-        gap: 0.6rem;
+        gap: 1rem;
         margin-top: 3rem;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .social-btn {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         background: white;
         border: 2px solid #e8ecef;
         border-radius: 10px;
@@ -439,14 +634,16 @@
         justify-content: center;
         color: #666;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
         outline: none;
+        letter-spacing: 0;
+        line-height: 1;
     }
 
     .social-btn:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.3);
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
     }
 
     .social-btn:active {
@@ -484,11 +681,12 @@
     .quick-contact {
         background: linear-gradient(135deg, #E9F8F9, #ffffff);
         border-radius: 20px;
-        padding: 3rem;
+        padding: 2.5rem 2rem;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        margin-top: 4rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
         text-align: center;
-        border: 1px solid rgba(8, 131, 149, 0.1);
+        border: 1px solid rgba(30, 64, 175, 0.1);
     }
 
     .quick-contact h3 {
@@ -507,7 +705,7 @@
         transform: translateX(-50%);
         width: 60px;
         height: 3px;
-        background: linear-gradient(135deg, #088395, #5a6fd8);
+        background: linear-gradient(135deg, #1e40af, #5a6fd8);
         border-radius: 2px;
     }
 
@@ -612,8 +810,19 @@
             width: 100%;
             max-width: 250px;
         }
+        
+        .social-links {
+            gap: 0.8rem;
+            margin-top: 2.5rem;
+        }
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
     }
-    }
+    
 
     .quick-btn:hover {
         transform: translateY(-2px);
@@ -627,17 +836,92 @@
             font-size: 2.5rem;
         }
         
-        .contact-grid {
+        .documents-grid {
             grid-template-columns: 1fr;
-            gap: 2rem;
         }
         
-        .contact-form {
-            padding: 2rem;
+        .document-actions {
+            flex-direction: column;
+        }
+        
+        .timeline::before {
+            left: 20px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+            width: calc(100% - 60px);
+            margin-left: 60px;
+            margin-right: 0;
+            text-align: left;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .timeline-dot {
+            left: 20px;
+        }
+        
+        /* Map responsive controls */
+        #map {
+            height: 350px !important;
+        }
+        
+        .custom-zoom-controls {
+            top: 8px;
+            right: 8px;
+        }
+        
+        .zoom-btn {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+        }
+        
+        .map-controls {
+            bottom: 8px;
+            left: 8px;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .map-control-btn {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #map {
+            height: 300px !important;
+        }
+        
+        .custom-zoom-controls {
+            top: 5px;
+            right: 5px;
+        }
+        
+        .zoom-btn {
+            width: 32px;
+            height: 32px;
+            font-size: 12px;
+        }
+        
+        .map-controls {
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+        }
+        
+        .map-control-btn {
+            flex: 1;
+            padding: 6px 8px;
+            font-size: 11px;
         }
         
         .social-links {
-            gap: 0.5rem;
+            gap: 0.6rem;
+            margin-top: 2rem;
         }
         
         .social-btn {
@@ -651,7 +935,7 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="page-header">
+<section class="page-header" style=" position: relative; top: 0;">
     <div class="container">
         <h1 class="page-title" data-aos="fade-up">Hubungi Kami</h1>
         <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="200">
@@ -670,7 +954,7 @@
         
         <!-- Contact Information Grid -->
         <div class="contact-info-grid">
-            <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+            {{-- <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="contact-icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -680,7 +964,7 @@
                     Kec. Bungursari<br>
                     Tasikmalaya, Jawa Barat 46151</p>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-icon">
@@ -782,8 +1066,8 @@
             </div>
         </div>
 
-        <!-- Office Hours -->
-        <div class="office-hours">
+        <!-- Office Hours - HIDDEN -->
+        {{-- <div class="office-hours">
             <h2 class="section-title" data-aos="fade-up">Jam Pelayanan</h2>
             <div class="hours-grid">
                 <div class="hours-card" data-aos="fade-up" data-aos-delay="100">
@@ -825,7 +1109,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Quick Contact -->
         <div class="quick-contact" data-aos="fade-up">
@@ -871,7 +1155,16 @@
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Lokasi Kantor</h2>
         <div class="map-container" data-aos="fade-up" data-aos-delay="200">
-            <div id="map"></div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2074418811544!2d108.21810787500382!3d-7.327418992669029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f50b5b7b5b7b5%3A0x1234567890abcdef!2sJl.%20Letnan%20Harun%20No.1%2C%20Sukamulya%2C%20Kec.%20Bungursari%2C%20Kota%20Tasikmalaya%2C%20Jawa%20Barat%2046151!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%" 
+                height="450" 
+                style="border:0;border-radius:15px;pointer-events:auto;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi Inspektorat Kota Tasikmalaya">
+            </iframe>
         </div>
         <!-- Map Info -->
         <div class="row mt-4">
@@ -887,157 +1180,77 @@
 @endsection
 
 @push('scripts')
-<!-- Leaflet JavaScript -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
 <script>
-    // Initialize map when page loads
+    // Contact form handling
     document.addEventListener('DOMContentLoaded', function() {
-        // Coordinates for Inspektorat Kota Tasikmalaya
-        // Approximate coordinates for Tasikmalaya city center
-        const lat = -7.3274;
-        const lng = 108.2207;
+        const contactForm = document.getElementById('contactForm');
         
-        // Initialize the map
-        const map = L.map('map').setView([lat, lng], 16);
-        
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        }).addTo(map);
-        
-        // Custom icon for the marker
-        const customIcon = L.divIcon({
-            className: 'custom-marker',
-            html: `<div style="
-                background: #088395;
-                color: white;
-                width: 40px;
-                height: 40px;
-                border-radius: 50% 50% 50% 0;
-                transform: rotate(-45deg);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 3px solid white;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            ">
-                <i class="fas fa-building" style="transform: rotate(45deg); font-size: 16px;"></i>
-            </div>`,
-            iconSize: [40, 40],
-            iconAnchor: [20, 40],
-            popupAnchor: [0, -40]
-        });
-        
-        // Add marker
-        const marker = L.marker([lat, lng], {icon: customIcon}).addTo(map);
-        
-        // Add popup
-        marker.bindPopup(`
-            <div class="popup-content">
-                <h4><i class="fas fa-building"></i> Inspektorat Kota Tasikmalaya</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Jl. Letnan Harun No. 1, Sukamulya</p>
-                <p><i class="fas fa-location-arrow"></i> Kec. Bungursari, Tasikmalaya</p>
-                <p><i class="fas fa-phone"></i> (0265) 331-548</p>
-                <p><i class="fas fa-envelope"></i> inspektorat@tasikmalayakota.go.id</p>
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const formObject = {};
+                formData.forEach((value, key) => {
+                    formObject[key] = value;
+                });
+                
+                // Simple validation
+                if (!formObject.name || !formObject.email || !formObject.message) {
+                    showAlert('Mohon lengkapi semua field yang diperlukan', 'error');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formObject.email)) {
+                    showAlert('Format email tidak valid', 'error');
+                    return;
+                }
+                
+                // Simulate form submission
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    showAlert('Pesan Anda telah berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+                    this.reset();
+                    
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        }
+    });
+
+    // Alert function
+    function showAlert(message, type = 'info') {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type}`;
+        alertDiv.innerHTML = `
+            <div class="alert-content">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                <span>${message}</span>
+                <button class="alert-close" onclick="this.parentElement.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-        `).openPopup();
+        `;
         
-        // Add click event to open popup
-        map.on('click', function(e) {
-            marker.openPopup();
-        });
-    });
-
-    // Contact form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+        document.body.appendChild(alertDiv);
         
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Simulate form submission
-        const submitBtn = this.querySelector('.form-btn');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-        submitBtn.disabled = true;
-        
+        // Auto remove after 5 seconds
         setTimeout(() => {
-            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan merespons dalam 24 jam.');
-            this.reset();
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-
-    // Form validation
-    const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
-    
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.style.borderColor = '#dc3545';
-            } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '#088395';
+            if (alertDiv.parentElement) {
+                alertDiv.remove();
             }
-        });
-        
-        input.addEventListener('input', function() {
-            this.style.borderColor = '#e8ecef';
-        });
-    });
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        }, 5000);
     }
-
-    // Quick contact interactions
-    document.querySelectorAll('.quick-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            if (this.href.startsWith('mailto:') || this.href.startsWith('tel:') || this.href.startsWith('https://wa.me/')) {
-                // Allow default behavior for these links
-                return;
-            }
-            e.preventDefault();
-        });
-    });
-
-    // Social media link tracking and blur fix
-    document.querySelectorAll('.social-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.blur();
             
-            const platform = this.className.split(' ').find(cls => cls !== 'social-btn');
-            console.log(`Social media click: ${platform}`);
-            
-            // Open actual social media links
-            if (platform === 'facebook') {
-                window.open('https://facebook.com/inspektorat.tasikmalaya', '_blank');
-            } else if (platform === 'instagram') {
-                window.open('https://instagram.com/inspektorat.tasikmalaya', '_blank');
-            } else if (platform === 'youtube') {
-                window.open('https://youtube.com/@inspektorattasikmalaya', '_blank');
-            } else if (platform === 'twitter') {
-                window.open('https://twitter.com/inspektorat_tsk', '_blank');
-            }
-        });
-        
-        btn.addEventListener('mousedown', function(e) {
-            e.preventDefault();
-        });
-        
-        btn.addEventListener('focus', function() {
-            this.style.outline = 'none';
-        });
-    });
 </script>
 @endpush

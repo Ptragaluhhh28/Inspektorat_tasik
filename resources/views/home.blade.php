@@ -4,17 +4,40 @@
 
 @push('styles')
 <style>
+    /* Remove unnecessary gaps */
+    body {
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Ensure no gaps between sections */
+    section + section {
+        margin-top: 0;
+    }
+    
     /* Hero Section */
     .hero {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><polygon fill="%23ffffff15" points="0,0 1000,200 1000,400 0,300"/><polygon fill="%23ffffff08" points="0,100 1000,0 1000,150 0,250"/></svg>');
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><polygon fill="%23ffffff15" points="0,0 1000,200 1000,400 0,300"/><polygon fill="%23ffffff08" points="0,100 1000,0 1000,150 0,250"/></svg>');
         background-size: cover;
         background-attachment: fixed;
         color: white;
-        padding: 6rem 0 4rem;
+        padding: 4rem 0 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
+        margin: 0;
     }
 
     .hero::before {
@@ -102,7 +125,8 @@
     /* Stats Section */
     .stats-section {
         background: white;
-        margin-top: -2rem;
+        margin-top: -1rem;
+        margin-bottom: 0;
         position: relative;
         z-index: 10;
         border-radius: 20px;
@@ -131,7 +155,7 @@
     .stat-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -139,7 +163,7 @@
         margin: 0 auto 1rem;
         color: white;
         font-size: 2rem;
-        box-shadow: 0 10px 30px rgba(8, 131, 149, 0.3);
+        box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
     }
 
     .stat-number {
@@ -156,14 +180,15 @@
 
     /* Services Section */
     .services-section {
-        padding: 6rem 0 2rem;
+        padding: 4rem 0 2rem;
         background: #f8f9ff;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
     .section-header {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .section-title {
@@ -204,7 +229,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
     }
 
     .service-card:hover {
@@ -215,7 +240,7 @@
     .service-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -239,7 +264,7 @@
     }
 
     .service-link {
-        color: #088395;
+        color: #1e40af;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -254,9 +279,10 @@
 
     /* News Section */
     .news-section {
-        padding: 2rem 0 6rem;
+        padding: 2rem 0 4rem;
         background: white;
         margin-top: 0;
+        margin-bottom: 0;
     }
 
     .news-grid {
@@ -282,7 +308,7 @@
 
     .news-image {
         height: 200px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -295,7 +321,7 @@
     }
 
     .news-date {
-        color: #088395;
+        color: #1e40af;
         font-size: 0.9rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -316,7 +342,7 @@
     }
 
     .news-link {
-        color: #088395;
+        color: #1e40af;
         text-decoration: none;
         font-weight: 600;
         display: inline-flex;
@@ -332,8 +358,10 @@
     /* Quick Links */
     .quick-links {
         background: linear-gradient(135deg, #2c3e50, #34495e);
-        padding: 4rem 0;
+        padding: 3rem 0;
         color: white;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .quick-links-grid {
@@ -361,7 +389,7 @@
     .quick-link-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: #088395;
+        color: #1e40af;
     }
 
     .quick-link-title {
@@ -371,6 +399,10 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+        .hero {
+            padding: 3rem 0 1.5rem;
+        }
+        
         .hero h1 {
             font-size: 2.5rem;
         }
@@ -386,6 +418,22 @@
             justify-content: center;
         }
 
+        .services-section {
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .news-section {
+            padding: 1.5rem 0 3rem;
+        }
+        
+        .quick-links {
+            padding: 2.5rem 0;
+        }
+        
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
         .services-grid,
         .news-grid {
             grid-template-columns: 1fr;
@@ -394,6 +442,7 @@
         .stat-item {
             border-right: none;
             border-bottom: 1px solid #e8ecef;
+            padding: 2rem 1rem;
         }
 
         .stat-item:last-child {
@@ -426,8 +475,8 @@
     </div>
 </section>
 
-<!-- Stats Section -->
-<section class="container">
+<!-- Stats Section - HIDDEN -->
+{{-- <section class="container">
     <div class="stats-section" data-aos="fade-up" data-aos-delay="200">
         <div class="stats-grid">
             <div class="stat-item">
@@ -460,7 +509,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <!-- Services Section -->
 <section class="services-section">
@@ -567,8 +616,8 @@
     </div>
 </section>
 
-<!-- Quick Links -->
-<section class="quick-links">
+<!-- Quick Links - HIDDEN -->
+{{-- <section class="quick-links">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title" style="color: white;">Akses Cepat</h2>
@@ -605,7 +654,7 @@
             </a>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection
 
 @push('scripts')

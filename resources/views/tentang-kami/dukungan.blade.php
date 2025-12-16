@@ -5,12 +5,13 @@
 @push('styles')
 <style>
     .page-header {
-        background: linear-gradient(135deg, rgba(8, 131, 149, 0.9), rgba(115, 200, 210, 0.9)),
-                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
-        background-size: cover;
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="%23ffffff15" points="0,0 1000,100 1000,300 0,200"/></svg>');
+        
         color: white;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
         text-align: center;
+        
     }
 
     .page-title {
@@ -49,7 +50,7 @@
     .support-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -73,7 +74,7 @@
     }
 
     .support-btn {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         padding: 0.8rem 2rem;
         border-radius: 30px;
@@ -85,7 +86,7 @@
 
     .support-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(8, 131, 149, 0.3);
+        box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
         color: white;
         text-decoration: none;
     }
@@ -120,7 +121,7 @@
     .contact-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -169,7 +170,7 @@
     }
 
     .faq-question.active {
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
     }
 
@@ -249,7 +250,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(135deg, #088395, #73C8D2);
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
         border-radius: 2px;
     }
 
