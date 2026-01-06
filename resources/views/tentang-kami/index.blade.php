@@ -187,7 +187,7 @@
                 </div>
                 <h3 class="vm-title">Visi</h3>
                 <p class="vm-text">
-                    "Terwujudnya Inspektorat yang Profesional, Independen, dan Objektif dalam Mendukung Tata Kelola Pemerintahan yang Baik dan Bersih di Kota Tasikmalaya"
+                    "TASIKMALAYA SEBAGAI KOTA INDUSTRI, JASA DAN PERDAGANGAN YANG RELIGIUS, INOVATIF, MAJU DAN BERKELANJUTAN"
                 </p>
             </div>
 
@@ -198,11 +198,11 @@
                 <h3 class="vm-title">Misi</h3>
                 <div class="vm-text" style="text-align: left;">
                     <ol style="padding-left: 1.5rem; line-height: 2;">
-                        <li>Melaksanakan pengawasan yang berkualitas dan berkesinambungan</li>
-                        <li>Memberikan early warning system yang efektif</li>
-                        <li>Meningkatkan kapasitas SDM pengawasan</li>
-                        <li>Mengembangkan sistem pengawasan berbasis teknologi informasi</li>
-                        <li>Mendorong penerapan nilai-nilai integritas</li>
+                        <li>MEWUJUDKAN SUMBER DAYA MANUSIA YANG BERKUALITAS DAN KEHIDUPAN SOSIAL MASYARAKAT YANG RELIGIUS DAN BERBUDAYA</li>
+                        <li>MEWUJUDKAN EKONOMI DAERAH YANG BERKEADILAN, KUAT DAN BERDAYA SAING BERBASIS INDUSTRI, JASA DAN PERDAGANGAN</li>
+                        <li>MEWUJUDKAN TATA KELOLA PEMERINTAHAN YANG BAIK DAN BERSIH</li>
+                        <li>MEWUJUDKAN INFRASTRUKTUR DAERAH YANG BERKUALITAS DAN MERATA</li>
+                        <li>MEWUJUDKAN PEMBANGUNAN YANG BERKELANJUTAN</li>
                     </ol>
                 </div>
             </div>
@@ -258,11 +258,9 @@
     <div class="container">
         <div class="text-center" data-aos="fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">
-                Nilai-Nilai Kami
+                Nilai-Nilai Berakhlak
             </h2>
-            <p style="color: #666; font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem;">
-                Prinsip-prinsip yang menjadi pedoman dalam setiap aktivitas pengawasan
-            </p>
+          
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">

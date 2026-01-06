@@ -18,12 +18,15 @@ class Kontak extends Model
         'subjek',
         'pesan',
         'status',
+        'balasan',
+        'replied_at',
     ];
 
     protected $casts = [
         'status' => 'boolean',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+        'replied_at' => 'datetime',
     ];
 
     // Scope untuk pesan baru/unread

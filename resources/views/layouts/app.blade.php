@@ -693,7 +693,7 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
-                        <span>(0265) 331548</span>
+                        <span>(0265) 7521453</span>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-fax"></i>

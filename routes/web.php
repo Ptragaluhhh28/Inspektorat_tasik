@@ -27,6 +27,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('berita', AdminBeritaController::class)->parameters([
             'berita' => 'berita'
         ]);
+        
+        // Kontak Management Routes
+        Route::prefix('kontak')->name('kontak.')->group(function () {
+            Route::get('/', [\App\Http\Controllers\Admin\KontakController::class, 'index'])->name('index');
+            Route::get('/{kontak}', [\App\Http\Controllers\Admin\KontakController::class, 'show'])->name('show');
+            Route::delete('/{kontak}', [\App\Http\Controllers\Admin\KontakController::class, 'destroy'])->name('destroy');
+            Route::post('/{kontak}/reply', [\App\Http\Controllers\Admin\KontakController::class, 'reply'])->name('reply');
+            Route::post('/{kontak}/mark-as-read', [\App\Http\Controllers\Admin\KontakController::class, 'markAsRead'])->name('markAsRead');
+            Route::post('/{kontak}/mark-as-unread', [\App\Http\Controllers\Admin\KontakController::class, 'markAsUnread'])->name('markAsUnread');
+            Route::post('/bulk-delete', [\App\Http\Controllers\Admin\KontakController::class, 'bulkDelete'])->name('bulkDelete');
+            Route::post('/bulk-mark-as-read', [\App\Http\Controllers\Admin\KontakController::class, 'bulkMarkAsRead'])->name('bulkMarkAsRead');
+        });
     });
 });
 
@@ -91,3 +103,4 @@ Route::get('/sakip', function () {
 Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');
+Route::post('/kontak', [\App\Http\Controllers\KontakController::class, 'store'])->name('kontak.store');

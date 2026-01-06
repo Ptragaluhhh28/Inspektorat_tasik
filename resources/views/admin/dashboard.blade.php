@@ -230,7 +230,7 @@
                     <i class="fas fa-envelope me-2"></i>
                     Kontak Masuk Terbaru
                 </h6>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="{{ route('admin.kontak.index') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-envelope me-1"></i>Lihat Semua
                 </a>
             </div>
@@ -247,8 +247,8 @@
                             <h6 class="mb-0">{{ $kontak->nama }}</h6>
                             <small class="text-muted">
                                 {{ Str::limit($kontak->subjek, 30) }}
-                                <span class="badge bg-{{ $kontak->status == 'baru' ? 'danger' : 'success' }} ms-2">
-                                    {{ ucfirst($kontak->status) }}
+                                <span class="badge bg-{{ $kontak->getStatusBadgeClass() }} ms-2">
+                                    {{ $kontak->getStatusLabel() }}
                                 </span>
                             </small>
                         </div>

@@ -375,16 +375,16 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h4 class="contact-title">Telepon</h4>
-                        <p class="contact-info">(0265) 331548</p>
+                        <p class="contact-info">(0265) 7521453</p>
                     </div>
                     
-                    <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                    /*<div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="contact-icon">
                             <i class="fas fa-fax"></i>
                         </div>
                         <h4 class="contact-title">Fax</h4>
                         <p class="contact-info">(0265) 331549</p>
-                    </div>
+                    </div>*/
                     
                     <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="contact-icon">

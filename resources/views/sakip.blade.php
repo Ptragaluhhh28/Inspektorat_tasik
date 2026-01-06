@@ -430,8 +430,8 @@
             </p>
         </div>
 
-        <!-- SAKIP Overview -->
-        <div class="sakip-overview">
+        <!-- SAKIP Overview - HIDDEN -->
+        {{-- <div class="sakip-overview">
             <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="overview-icon">
                     <i class="fas fa-bullseye"></i>
@@ -471,10 +471,11 @@
                     Proses analisis dan evaluasi atas capaian kinerja untuk perbaikan dan peningkatan kinerja di masa mendatang.
                 </p>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Performance Metrics -->
-        <div class="performance-metrics">
+        <!-- Performance Metrics - HIDDEN -->
+        {{-- <div class="performance-metrics">
             <h2 class="section-title" data-aos="fade-up">Capaian Kinerja 2024</h2>
             <div class="metrics-grid">
                 <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
@@ -501,7 +502,7 @@
                     <div class="metric-description">Audit yang telah selesai</div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Documents Section -->
         <div class="documents-section">
@@ -649,8 +650,8 @@
             </div>
         </div>
 
-        <!-- Evaluation Timeline -->
-        <div class="evaluation-timeline" data-aos="fade-up">
+        <!-- Evaluation Timeline - HIDDEN -->
+        {{-- <div class="evaluation-timeline" data-aos="fade-up">
             <h2 class="timeline-title">Timeline Evaluasi SAKIP 2025</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -698,7 +699,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 @endsection

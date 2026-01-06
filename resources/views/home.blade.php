@@ -617,7 +617,7 @@
 </section>
 
 <!-- Quick Links - HIDDEN -->
-{{-- <section class="quick-links">
+ <section class="quick-links">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title" style="color: white;">Akses Cepat</h2>
@@ -654,7 +654,7 @@
             </a>
         </div>
     </div>
-</section> --}}
+</section> 
 @endsection
 
 @push('scripts')

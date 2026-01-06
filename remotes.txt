@@ -1,0 +1,6 @@
+new-origin	https://github.com/SunanJamita/pkl_kominfo2.git (fetch)
+new-origin	https://github.com/SunanJamita/pkl_kominfo2.git (push)
+origin	git@github.com:ranggaardiansyahpratama/inspektorat_kominfo.git (fetch)
+origin	git@github.com:ranggaardiansyahpratama/inspektorat_kominfo.git (push)
+upstream	https://github.com/ranggaardiansyah999/inspektorat_kominfo.git (fetch)
+upstream	https://github.com/ranggaardiansyah999/inspektorat_kominfo.git (push)

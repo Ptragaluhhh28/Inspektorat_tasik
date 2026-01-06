@@ -21,7 +21,7 @@
     }
 
     .contact-container {
-        padding: 3rem 0 2rem;
+        padding: 3rem 0;
         margin-bottom: 0;
     }
 
@@ -232,8 +232,8 @@
 
     .map-section {
         background: #E9F8F9;
-        padding: 3rem 0 2rem;
-        margin-top: 2rem;
+        padding: 3rem 0;
+        margin-top: 0;
         margin-bottom: 0;
         border-radius: 20px;
     }
@@ -523,8 +523,8 @@
     }
 
     .office-hours {
-        margin-top: 3rem;
-        margin-bottom: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .hours-grid {
@@ -657,8 +657,8 @@
         border-radius: 20px;
         padding: 2.5rem 2rem;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
         text-align: center;
         border: 1px solid rgba(30, 64, 175, 0.1);
     }
@@ -1002,8 +1002,8 @@
 
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name" class="form-label">Nama Lengkap</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama lengkap Anda" required>
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" class="form-input" placeholder="Masukkan nama lengkap Anda" required>
                     </div>
 
                     <div class="form-group">
@@ -1012,13 +1012,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone" class="form-label">Nomor Telepon</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="Masukkan nomor telepon Anda">
+                        <label for="telepon" class="form-label">Nomor Telepon</label>
+                        <input type="tel" id="telepon" name="telepon" class="form-input" placeholder="Masukkan nomor telepon Anda">
                     </div>
 
                     <div class="form-group">
-                        <label for="subject" class="form-label">Subjek</label>
-                        <select id="subject" name="subject" class="form-select" required>
+                        <label for="subjek" class="form-label">Subjek</label>
+                        <select id="subjek" name="subjek" class="form-select" required>
                             <option value="">Pilih subjek pesan</option>
                             <option value="pengaduan">Pengaduan</option>
                             <option value="informasi">Permintaan Informasi</option>
@@ -1029,8 +1029,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="form-label">Pesan</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea id="pesan" name="pesan" class="form-textarea" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
                     </div>
 
                     <button type="submit" class="form-btn">
@@ -1085,8 +1085,8 @@
             </div>
         </div> --}}
 
-        <!-- Quick Contact -->
-        <div class="quick-contact" data-aos="fade-up">
+        <!-- Quick Contact - HIDDEN -->
+        {{-- <div class="quick-contact" data-aos="fade-up">
             <h3>Kontak Cepat</h3>
             <p>Hubungi kami melalui platform berikut untuk respon yang lebih cepat</p>
             <div class="quick-buttons">
@@ -1120,7 +1120,7 @@
                     <i class="fab fa-twitter"></i>
                 </a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 
@@ -1162,7 +1162,7 @@
                 });
                 
                 // Simple validation
-                if (!formObject.name || !formObject.email || !formObject.message) {
+                if (!formObject.nama || !formObject.email || !formObject.subjek || !formObject.pesan) {
                     showAlert('Mohon lengkapi semua field yang diperlukan', 'error');
                     return;
                 }
@@ -1174,21 +1174,40 @@
                     return;
                 }
                 
-                // Simulate form submission
+                // Submit form
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
                 submitBtn.disabled = true;
                 
-                // Simulate API call
-                setTimeout(() => {
-                    showAlert('Pesan Anda telah berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
-                    this.reset();
-                    
+                // Send to backend
+                fetch('{{ route("kontak.store") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formObject)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showAlert(data.message, 'success');
+                        this.reset();
+                    } else {
+                        showAlert(data.message || 'Terjadi kesalahan saat mengirim pesan', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showAlert('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.', 'error');
+                })
+                .finally(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
-                }, 2000);
+                });
             });
         }
     });

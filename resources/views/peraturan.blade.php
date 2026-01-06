@@ -275,17 +275,18 @@
             <div class="regulation-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="regulation-header">
                     <div class="regulation-info">
-                        <div class="regulation-number">Peraturan Wali Kota Tasikmalaya Nomor 45 Tahun 2025</div>
-                        <h3 class="regulation-title-item">Tentang Sistem Pengendalian Intern Pemerintah di Lingkungan Pemerintah Kota Tasikmalaya</h3>
+                        <div class="regulation-number">Peraturan Wali Kota Tasikmalaya Nomor 48 Tahun 2021</div>
+                        <h3 class="regulation-title-item">Tentang Susunan Organisasi, Kedudukan, Tugas Pokok, Fungsi
+Dan Tata Kerja Perangkat Daerah</h3>
                         <div class="regulation-date">
                             <i class="fas fa-calendar"></i> 15 Januari 2025
                         </div>
                     </div>
                     <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
+                        <a href="{{ asset('documents/Perwal-Nomor-48-Tahun-2021.pdf') }}" target="_blank" class="action-btn btn-view">
                             <i class="fas fa-eye"></i> Lihat
                         </a>
-                        <a href="#" class="action-btn btn-download">
+                        <a href="{{ asset('documents/Perwal-Nomor-48-Tahun-2021.pdf') }}" download class="action-btn btn-download">
                             <i class="fas fa-download"></i> Unduh
                         </a>
                     </div>
@@ -580,17 +581,20 @@
     // Regulation action handlers
     document.querySelectorAll('.action-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const regulationItem = this.closest('.regulation-item');
-            const regulationTitle = regulationItem.querySelector('.regulation-title-item').textContent;
-            const regulationNumber = regulationItem.querySelector('.regulation-number').textContent;
-            
-            if (this.classList.contains('btn-view')) {
-                alert(`Membuka: ${regulationNumber}\n${regulationTitle}`);
-            } else if (this.classList.contains('btn-download')) {
-                alert(`Mengunduh: ${regulationNumber}\n${regulationTitle}`);
+            const href = this.getAttribute('href');
+            if (href === '#' || !href) {
+                e.preventDefault();
+                const regulationItem = this.closest('.regulation-item');
+                const regulationTitle = regulationItem.querySelector('.regulation-title-item').textContent;
+                const regulationNumber = regulationItem.querySelector('.regulation-number').textContent;
+                
+                if (this.classList.contains('btn-view')) {
+                    alert(`Membuka: ${regulationNumber}\n${regulationTitle}`);
+                } else if (this.classList.contains('btn-download')) {
+                    alert(`Mengunduh: ${regulationNumber}\n${regulationTitle}`);
+                }
             }
+            // If href is not '#', let the default action happen
         });
     });
 </script>
