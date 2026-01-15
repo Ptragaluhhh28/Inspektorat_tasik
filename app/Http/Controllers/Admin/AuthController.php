@@ -23,7 +23,7 @@ class AuthController extends Controller
         if ($this->guard()->check()) {
             return redirect()->route('admin.dashboard');
         }
-        
+
         return view('admin.auth.login');
     }
 
@@ -43,10 +43,10 @@ class AuthController extends Controller
 
         if ($this->guard()->attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
-            
+
             // Update last login
             $this->guard()->user()->updateLastLogin();
-            
+
             return redirect()->intended(route('admin.dashboard'));
         }
 
@@ -59,38 +59,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $this->guard()->logout();
-        
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
+
         return redirect()->route('admin.login');
-    }
-
-    // Tampilkan halaman register (untuk development)
-    public function showRegisterForm()
-    {
-        return view('admin.auth.register');
-    }
-
-    // Proses register (untuk development)
-    public function register(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:admin_users',
-            'email' => 'required|string|email|max:255|unique:admin_users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
-        $admin = AdminUser::create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        $this->guard()->login($admin);
-
-        return redirect()->route('admin.dashboard');
     }
 }

@@ -17,8 +17,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Auth routes (tidak perlu middleware)
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-    Route::post('/register', [AuthController::class, 'register']);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     // Protected admin routes (perlu login)
@@ -27,7 +25,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('berita', AdminBeritaController::class)->parameters([
             'berita' => 'berita'
         ]);
-        
+
         // Kontak Management Routes
         Route::prefix('kontak')->name('kontak.')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\KontakController::class, 'index'])->name('index');

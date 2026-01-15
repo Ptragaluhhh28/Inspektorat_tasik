@@ -8,7 +8,7 @@
     .page-header {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 4rem 0;
+        padding: 2rem 0;
         text-align: center;
         margin-bottom: 0;
     }
@@ -21,7 +21,7 @@
     }
 
     .contact-container {
-        padding: 3rem 0;
+        padding: 1.5rem 0;
         margin-bottom: 0;
     }
 
@@ -41,7 +41,7 @@
     }
 
     .contact-info {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 
     .contact-item {
@@ -158,7 +158,7 @@
     .contact-form {
         background: white;
         border-radius: 20px;
-        padding: 3rem;
+        padding: 2rem;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     }
 
@@ -232,7 +232,7 @@
 
     .map-section {
         background: #E9F8F9;
-        padding: 3rem 0;
+        padding: 1.5rem 0;
         margin-top: 0;
         margin-bottom: 0;
         border-radius: 20px;
@@ -243,7 +243,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         color: #2c3e50;
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
     }
 
     .map-container {

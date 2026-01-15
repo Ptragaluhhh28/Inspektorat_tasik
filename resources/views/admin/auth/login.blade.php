@@ -12,7 +12,7 @@
     
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/Kota tasik.jpg') }}') center/cover no-repeat fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -30,14 +30,15 @@
         }
 
         .login-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
             color: white;
             text-align: center;
             padding: 2rem;
         }
 
-        .login-header i {
-            font-size: 3rem;
+        .login-header img {
+            width: 80px;
+            height: auto;
             margin-bottom: 1rem;
         }
 
@@ -61,7 +62,7 @@
         }
 
         .btn-login {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%,);
             border: none;
             border-radius: 10px;
             padding: 0.75rem 2rem;
@@ -105,7 +106,7 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <i class="fas fa-shield-alt"></i>
+            <img src="{{ asset('images/logo-tasik.png') }}" alt="Logo Tasikmalaya">
             <h4 class="mb-0">Admin Login</h4>
             <small>PKL Kominfo Dashboard</small>
         </div>
@@ -163,11 +164,7 @@
                 </button>
             </form>
 
-            <div class="register-link">
-                <small class="text-muted">Belum punya akun? 
-                    <a href="{{ route('admin.register') }}">Daftar di sini</a>
-                </small>
-            </div>
+
         </div>
     </div>
 
