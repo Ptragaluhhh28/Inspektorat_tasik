@@ -259,7 +259,7 @@
                     <!-- Logo & Brand -->
                     <div class="text-center mb-5">
                         <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
+                            style="width: 60px; height: 60px;">
                             <i class="fas fa-shield-alt text-primary fs-4"></i>
                         </div>
                         <h4 class="text-white fw-bold mb-1">Inspektorat</h4>
@@ -274,7 +274,7 @@
                         <ul class="nav flex-column gap-1">
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" 
-                                   href="{{ route('admin.dashboard') }}">
+                                    href="{{ route('admin.dashboard') }}">
                                     <i class="fas fa-home"></i>
                                     <span class="ms-3">Dashboard</span>
                                 </a>
@@ -288,7 +288,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.berita.*') ? 'active' : '' }}" 
-                                   href="{{ route('admin.berita.index') }}">
+                                href="{{ route('admin.berita.index') }}">
                                     <i class="fas fa-newspaper"></i>
                                     <span class="ms-3">Berita</span>
                                     <span class="badge bg-danger bg-opacity-75 rounded-pill ms-auto">2</span>
@@ -320,7 +320,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link {{ request()->routeIs('admin.kontak.*') ? 'active' : '' }}" href="{{ route('admin.kontak.index') }}">
                                     <i class="fas fa-envelope"></i>
                                     <span class="ms-3">Kontak Masuk</span>
                                     <span class="badge bg-success bg-opacity-75 rounded-pill ms-auto">5</span>

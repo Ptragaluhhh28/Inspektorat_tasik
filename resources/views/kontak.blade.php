@@ -971,7 +971,7 @@
                 </div>
             </div>
 
-            <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
+            {{-- <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
                 <div class="contact-icon">
                     <i class="fas fa-globe"></i>
                 </div>
@@ -979,9 +979,9 @@
                     <h4>Website</h4>
                     <p><a href="https://inspektorat.tasikmalayakota.go.id" target="_blank">inspektorat.tasikmalayakota.go.id</a></p>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
+            {{-- <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
                 <div class="contact-icon">
                     <i class="fas fa-clock"></i>
                 </div>
@@ -991,7 +991,7 @@
                     <strong>Jumat:</strong> 08:00 - 16:30 WIB<br>
                     <strong>Sabtu - Minggu:</strong> Tutup</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
         
         <div class="contact-grid">

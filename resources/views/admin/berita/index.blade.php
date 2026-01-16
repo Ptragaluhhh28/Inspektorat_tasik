@@ -79,10 +79,10 @@
                                 <td>
                                     @if($item->gambar)
                                         <img src="{{ asset('images/berita/' . $item->gambar) }}" 
-                                             alt="{{ $item->judul }}" 
-                                             class="berita-thumbnail" 
-                                             loading="lazy"
-                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            alt="{{ $item->judul }}" 
+                                            class="berita-thumbnail" 
+                                            loading="lazy"
+                                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                         <div class="no-image-placeholder" style="display: none;">
                                             <i class="fas fa-exclamation-triangle"></i>
                                         </div>
@@ -114,17 +114,17 @@
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
                                         <a href="{{ route('admin.berita.show', $item->id) }}" 
-                                           class="btn btn-info" title="Lihat">
+                                            class="btn btn-info" title="Lihat">
                                             <i class="fas fa-eye"></i>
                                         </a>
                                         <a href="{{ route('admin.berita.edit', $item->id) }}" 
-                                           class="btn btn-warning" title="Edit">
+                                        class="btn btn-warning" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <form action="{{ route('admin.berita.destroy', $item->id) }}" 
-                                              method="POST" 
-                                              style="display: inline;"
-                                              onsubmit="return confirm('Yakin ingin menghapus berita ini?')">
+                                            method="POST" 
+                                            style="display: inline;"
+                                            onsubmit="return confirm('Yakin ingin menghapus berita ini?')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" title="Hapus">
@@ -157,4 +157,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection 
