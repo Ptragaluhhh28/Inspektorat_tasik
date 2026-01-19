@@ -104,8 +104,8 @@
 <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
 <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-8a0f4a0d-5ab9-40eb-b22b-306898be9f00" data-elfsight-app-lazy></div>
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-8a0f4a0d-5ab9-40eb-b22b-306898be9f00" data-elfsight-app-lazy></div>
     </div>
 </section>
 
