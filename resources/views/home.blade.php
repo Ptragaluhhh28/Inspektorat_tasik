@@ -357,9 +357,9 @@
 
     /* Quick Links */
     .quick-links {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        padding: 3rem 0;
-        color: white;
+        background: white;
+        padding: 4rem 0;
+        color: #333;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -373,17 +373,19 @@
     .quick-link-item {
         text-align: center;
         padding: 2rem 1rem;
-        background: rgba(255, 255, 255, 0.1);
+        background: white;
         border-radius: 16px;
         transition: all 0.3s ease;
         text-decoration: none;
-        color: white;
-        backdrop-filter: blur(10px);
+        color: #333;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0f0f0;
     }
 
     .quick-link-item:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: #f8f9fa;
         transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .quick-link-icon {
@@ -620,8 +622,8 @@
  <section class="quick-links">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title" style="color: white;">Akses Cepat</h2>
-            <p class="section-subtitle" style="color: #bdc3c7;">Portal dan layanan digital untuk kemudahan akses informasi</p>
+            <h2 class="section-title">Akses Cepat</h2>
+            <p class="section-subtitle">Portal dan layanan digital untuk kemudahan akses informasi</p>
         </div>
 
         <div class="quick-links-grid">

@@ -593,9 +593,7 @@
                         <a href="{{ route('tentang-kami') }}" class="dropdown-item {{ request()->routeIs('tentang-kami') ? 'active' : '' }}">
                             <i class="fas fa-info-circle"></i> Profil
                         </a>
-                        <a href="{{ route('sejarah') }}" class="dropdown-item {{ request()->routeIs('sejarah') ? 'active' : '' }}">
-                            <i class="fas fa-history"></i> Sejarah
-                        </a>
+
                         <a href="{{ route('tupoksi') }}" class="dropdown-item {{ request()->routeIs('tupoksi') ? 'active' : '' }}">
                             <i class="fas fa-tasks"></i> Tupoksi
                         </a>

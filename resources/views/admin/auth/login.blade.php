@@ -9,10 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <style>
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/Kota tasik.jpg') }}') center/cover no-repeat fixed;
+            background: linear-gradient(135deg , #00F7FF 0% , #5B23FF 100% );
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -100,15 +102,27 @@
         .register-link a:hover {
             text-decoration: underline;
         }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6c757d;
+            z-index: 10;
+        }
     </style>
 </head>
 
 <body>
     <div class="login-container">
         <div class="login-header">
-            <img src="{{ asset('images/logo-tasik.png') }}" alt="Logo Tasikmalaya">
+            <img src="{{ asset('images/Logo tasik.png') }}" alt="Logo Tasikmalaya">
             <h4 class="mb-0">Admin Login</h4>
-            <small>PKL Kominfo Dashboard</small>
         </div>
 
         <div class="login-body">
@@ -141,22 +155,18 @@
                     </label>
                 </div>
 
-                <div class="form-floating">
+                <div class="form-floating position-relative">
                     <input type="password" class="form-control" id="password" name="password" 
-                           placeholder="Password" required>
+                           placeholder="Password" required style="padding-right: 45px;">
                     <label for="password">
                         <i class="fas fa-lock me-2"></i>Password
                     </label>
+                    <span class="password-toggle" onclick="togglePassword()">
+                        <i class="fas fa-eye" id="toggleIcon"></i>
+                    </span>
                 </div>
 
-                <div class="remember-me">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember">
-                        <label class="form-check-label" for="remember">
-                            Ingat saya
-                        </label>
-                    </div>
-                </div>
+
 
                 <button type="submit" class="btn btn-primary btn-login">
                     <i class="fas fa-sign-in-alt me-2"></i>
@@ -170,5 +180,21 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
 </body>
 </html>

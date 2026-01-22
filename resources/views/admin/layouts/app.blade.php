@@ -14,6 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -258,9 +260,8 @@
                 <div class="position-sticky pt-4">
                     <!-- Logo & Brand -->
                     <div class="text-center mb-5">
-                        <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                            style="width: 60px; height: 60px;">
-                            <i class="fas fa-shield-alt text-primary fs-4"></i>
+                        <div class="mb-3">
+                            <i class="bi bi-person-circle text-white" style="font-size: 4rem;"></i>
                         </div>
                         <h4 class="text-white fw-bold mb-1">Inspektorat</h4>
                         <p class="text-white-50 small mb-0">Kota Tasikmalaya</p>
@@ -294,51 +295,7 @@
                                     <span class="badge bg-danger bg-opacity-75 rounded-pill ms-auto">2</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-images"></i>
-                                    <span class="ms-3">Galeri</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span class="ms-3">SAKIP</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-gavel"></i>
-                                    <span class="ms-3">Peraturan</span>
-                                </a>
-                            </li>
-                            
-                            <!-- Communication -->
-                            <li class="nav-item mt-3">
-                                <div class="text-white-50 small fw-semibold px-3 mb-2 text-uppercase tracking-wider">
-                                    Communication
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('admin.kontak.*') ? 'active' : '' }}" href="{{ route('admin.kontak.index') }}">
-                                    <i class="fas fa-envelope"></i>
-                                    <span class="ms-3">Kontak Masuk</span>
-                                    <span class="badge bg-success bg-opacity-75 rounded-pill ms-auto">5</span>
-                                </a>
-                            </li>
-                            
-                            <!-- Analytics -->
-                            <li class="nav-item mt-3">
-                                <div class="text-white-50 small fw-semibold px-3 mb-2 text-uppercase tracking-wider">
-                                    Analytics
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span class="ms-3">Statistik</span>
-                                </a>
-                            </li>
+
                             
                             <!-- System -->
                             <li class="nav-item mt-4">
@@ -385,23 +342,7 @@
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <!-- Quick Actions -->
-                            <div class="dropdown">
-                                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    <i class="fas fa-plus me-1"></i>Quick Actions
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('admin.berita.create') }}">
-                                        <i class="fas fa-newspaper me-2"></i>Tambah Berita
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-images me-2"></i>Upload Galeri
-                                    </a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-cog me-2"></i>Pengaturan
-                                    </a></li>
-                                </ul>
-                            </div>
+
                             
                             <!-- Current Time -->
                             <div class="text-muted small">
@@ -409,26 +350,8 @@
                                 <span id="current-time">{{ now()->format('d M Y, H:i') }}</span>
                             </div>
                             
-                            <!-- User Profile -->
-                            <div class="dropdown">
-                                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    <i class="fas fa-user-circle me-1"></i>Admin
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-user me-2"></i>Profile
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-cog me-2"></i>Settings
-                                    </a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form-2').submit();">
-                                        <i class="fas fa-sign-out-alt me-2"></i>Logout
-                                    </a></li>
-                                </ul>
-                                <form id="logout-form-2" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                            <div class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-person-circle me-1"></i>Admin
                             </div>
                         </div>
                     </div>

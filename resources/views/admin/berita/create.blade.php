@@ -105,22 +105,7 @@
                                 </div>
                             </div>
 
-                            <!-- Info Box -->
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h6 class="card-title">
-                                        <i class="fas fa-info-circle text-info me-1"></i>
-                                        Tips Menulis Berita
-                                    </h6>
-                                    <small class="text-muted">
-                                        • Gunakan judul yang menarik dan informatif<br>
-                                        • Tulis excerpt yang merangkum inti berita<br>
-                                        • Gunakan gambar berkualitas tinggi<br>
-                                        • Simpan sebagai draft untuk review<br>
-                                        • Publish setelah konten final
-                                    </small>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
