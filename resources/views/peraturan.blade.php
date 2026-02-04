@@ -296,97 +296,17 @@ Dan Tata Kerja Perangkat Daerah</h3>
             <div class="regulation-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="regulation-header">
                     <div class="regulation-info">
-                        <div class="regulation-number">Peraturan Menteri Dalam Negeri Nomor 78 Tahun 2024</div>
-                        <h3 class="regulation-title-item">Tentang Petunjuk Teknis Pelaksanaan Pengawasan Internal di Pemerintah Daerah</h3>
+                        <div class="regulation-number">Peraturan Wali Kota Tasikmalaya Nomor 55 Tahun 2021</div>
+                        <h3 class="regulation-title-item">Tentang Tugas Pokok Dan Rincian Tugas Unit Inspektorat Daerah Kota Tasikmalaya</h3>
                         <div class="regulation-date">
                             <i class="fas fa-calendar"></i> 20 Desember 2024
                         </div>
                     </div>
                     <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
+                        <a href="{{ asset('documents/Perwal-Nomor-55-Tahun-2021.pdf') }}" target="_blank" class="action-btn btn-view">
                             <i class="fas fa-eye"></i> Lihat
                         </a>
-                        <a href="#" class="action-btn btn-download">
-                            <i class="fas fa-download"></i> Unduh
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="regulation-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="regulation-header">
-                    <div class="regulation-info">
-                        <div class="regulation-number">Peraturan Pemerintah Nomor 58 Tahun 2024</div>
-                        <h3 class="regulation-title-item">Tentang Standar Akuntabilitas Kinerja Instansi Pemerintah</h3>
-                        <div class="regulation-date">
-                            <i class="fas fa-calendar"></i> 10 November 2024
-                        </div>
-                    </div>
-                    <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
-                            <i class="fas fa-eye"></i> Lihat
-                        </a>
-                        <a href="#" class="action-btn btn-download">
-                            <i class="fas fa-download"></i> Unduh
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="regulation-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="regulation-header">
-                    <div class="regulation-info">
-                        <div class="regulation-number">Undang-Undang Nomor 23 Tahun 2024</div>
-                        <h3 class="regulation-title-item">Tentang Pencegahan dan Pemberantasan Tindak Pidana Korupsi</h3>
-                        <div class="regulation-date">
-                            <i class="fas fa-calendar"></i> 25 Oktober 2024
-                        </div>
-                    </div>
-                    <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
-                            <i class="fas fa-eye"></i> Lihat
-                        </a>
-                        <a href="#" class="action-btn btn-download">
-                            <i class="fas fa-download"></i> Unduh
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="regulation-item" data-aos="fade-up" data-aos-delay="500">
-                <div class="regulation-header">
-                    <div class="regulation-info">
-                        <div class="regulation-number">Peraturan Daerah Kota Tasikmalaya Nomor 12 Tahun 2024</div>
-                        <h3 class="regulation-title-item">Tentang Transparansi dan Akuntabilitas Pengelolaan Keuangan Daerah</h3>
-                        <div class="regulation-date">
-                            <i class="fas fa-calendar"></i> 15 September 2024
-                        </div>
-                    </div>
-                    <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
-                            <i class="fas fa-eye"></i> Lihat
-                        </a>
-                        <a href="#" class="action-btn btn-download">
-                            <i class="fas fa-download"></i> Unduh
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="regulation-item" data-aos="fade-up" data-aos-delay="600">
-                <div class="regulation-header">
-                    <div class="regulation-info">
-                        <div class="regulation-number">Peraturan Wali Kota Tasikmalaya Nomor 33 Tahun 2024</div>
-                        <h3 class="regulation-title-item">Tentang Standar Operating Procedure (SOP) Pengaduan Masyarakat</h3>
-                        <div class="regulation-date">
-                            <i class="fas fa-calendar"></i> 05 Agustus 2024
-                        </div>
-                    </div>
-                    <div class="regulation-actions">
-                        <a href="#" class="action-btn btn-view">
-                            <i class="fas fa-eye"></i> Lihat
-                        </a>
-                        <a href="#" class="action-btn btn-download">
+                        <a href="{{ asset('documents/Perwal-Nomor-55-Tahun-2021.pdf') }}" download class="action-btn btn-download">
                             <i class="fas fa-download"></i> Unduh
                         </a>
                     </div>

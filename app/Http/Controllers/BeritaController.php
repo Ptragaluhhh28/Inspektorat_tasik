@@ -12,7 +12,7 @@ class BeritaController extends Controller
         // Ambil berita yang sudah dipublish saja
         $berita = Berita::published() // status = 1
                        ->latest()
-                       ->paginate(9); // 9 item per halaman untuk grid 3x3
+                       ->paginate(4); // 4 item per halaman
         
         return view('berita.index', compact('berita'));
     }

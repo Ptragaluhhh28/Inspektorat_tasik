@@ -41,6 +41,23 @@
 .table td {
     vertical-align: middle;
 }
+
+/* Hide pagination info text (Showing 1 to X...) */
+.hide-pagination-info .small.text-muted,
+.hide-pagination-info p,
+.hide-pagination-info nav > div:first-child {
+    display: none !important;
+}
+
+.hide-pagination-info nav > div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
 </style>
 @endpush
 
@@ -147,7 +164,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex justify-content-center mt-4 hide-pagination-info">
                     {{ $berita->links() }}
                 </div>
                 @else

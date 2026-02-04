@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard Admin') - PKL Kominfo</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/Logo tasik.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/Logo tasik.png') }}">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -330,7 +334,7 @@
                         <div>
                             <h1 class="page-title">@yield('page-title', 'Dashboard')</h1>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                                    <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
                                         <a href="{{ route('admin.dashboard') }}" class="text-decoration-none">
                                             <i class="fas fa-home me-1"></i>Home

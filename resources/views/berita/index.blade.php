@@ -245,6 +245,17 @@
             overflow-x: auto;
             padding-bottom: 1rem;
         }
+    /* Hide pagination info text (Showing 1 to X...) */
+    .hide-pagination-info .small.text-muted,
+    .hide-pagination-info p,
+    .hide-pagination-info nav > div:first-child {
+        display: none !important;
+    }
+
+    .hide-pagination-info nav > div:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 </style>
 @endpush
@@ -335,17 +346,19 @@
                 </article>
                 @endforeach
             @else
+                @if($berita->count() == 0)
                 <div class="col-12 text-center py-5">
                     <i class="fas fa-newspaper fa-4x text-muted mb-3"></i>
                     <h5 class="text-muted">Belum ada berita tersedia</h5>
                     <p class="text-muted">Silakan kembali lagi nanti untuk membaca berita terbaru.</p>
                 </div>
+                @endif
             @endif
         </div>
 
         <!-- Pagination -->
         @if($berita->hasPages())
-        <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
+        <div class="d-flex justify-content-center mt-5 hide-pagination-info" data-aos="fade-up">
             {{ $berita->links() }}
         </div>
         @endif
@@ -355,120 +368,9 @@
 
 @push('scripts')
 <script>
-    // Pagination configuration
-    const ITEMS_PER_PAGE = 3;
-    let currentPage = 1;
-    let allNewsCards = [];
-    let filteredNewsCards = [];
-    let isFilterActive = false;
-
-    // Initialize pagination
+    // Animation for news cards
     document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            allNewsCards = Array.from(document.querySelectorAll('.news-card'));
-            filteredNewsCards = [...allNewsCards];
-            updateNewsDisplay();
-            setupPagination();
-        }, 100);
-    });
-
-    function updateNewsDisplay() {
-        // Hide all news cards first
-        allNewsCards.forEach(card => {
-            card.style.display = 'none';
-        });
-
-        // Calculate which cards to show for current page
-        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-        const endIndex = startIndex + ITEMS_PER_PAGE;
-        const cardsToShow = filteredNewsCards.slice(startIndex, endIndex);
-
-        // Show cards for current page
-        cardsToShow.forEach(card => {
-            card.style.display = 'block';
-        });
-    }
-
-    function setupPagination() {
-        const totalPages = Math.ceil(filteredNewsCards.length / ITEMS_PER_PAGE);
-        const paginationContainer = document.getElementById('pagination');
-        
-        if (!paginationContainer) return;
-        
-        if (totalPages <= 1) {
-            paginationContainer.style.display = 'none';
-            return;
-        } else {
-            paginationContainer.style.display = 'flex';
-        }
-
-        let paginationHTML = '';
-
-        // Previous button
-        if (currentPage > 1) {
-            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i></a>`;
-        }
-
-        // Page numbers
-        for (let i = 1; i <= totalPages; i++) {
-            const activeClass = i === currentPage ? 'active' : '';
-            paginationHTML += `<a href="#" class="page-btn ${activeClass}" onclick="changePage(${i})">${i}</a>`;
-        }
-
-        // Next button
-        if (currentPage < totalPages) {
-            paginationHTML += `<a href="#" class="page-btn" onclick="changePage(${currentPage + 1})"><i class="fas fa-chevron-right"></i></a>`;
-        }
-
-        paginationContainer.innerHTML = paginationHTML;
-    }
-
-    function changePage(page) {
-        const totalPages = Math.ceil(filteredNewsCards.length / ITEMS_PER_PAGE);
-        
-        if (page < 1 || page > totalPages) return;
-        
-        currentPage = page;
-        updateNewsDisplay();
-        setupPagination();
-        
-        // Smooth scroll to news section
-        document.querySelector('.news-grid').scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-
-    // Filter functionality with pagination integration
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Reset pagination to first page
-            currentPage = 1;
-            
-            const category = this.textContent.toLowerCase();
-            
-            if (category === 'semua') {
-                isFilterActive = false;
-                filteredNewsCards = [...allNewsCards];
-            } else {
-                isFilterActive = true;
-                filteredNewsCards = allNewsCards.filter(card => {
-                    const cardCategory = card.querySelector('.news-category').textContent.toLowerCase();
-                    return cardCategory.includes(category);
-                });
-            }
-            
-            updateNewsDisplay();
-            setupPagination();
-        });
+        // Any simple animations if needed
     });
 </script>
 @endpush
