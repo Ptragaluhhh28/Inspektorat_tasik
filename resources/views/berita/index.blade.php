@@ -193,34 +193,67 @@
         margin-bottom: 1rem;
     }
 
+    /* Pagination Styles */
     .pagination {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 0.5rem;
         margin-top: 3rem;
+        list-style: none;
+        padding: 0;
     }
 
-    .page-btn {
-        width: 40px;
+    .pagination .page-item .page-link {
+        min-width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: white;
-        color: #666;
+        color: #333;
         text-decoration: none;
         border-radius: 8px;
         font-weight: 500;
         transition: all 0.3s ease;
-        border: 1px solid #e8ecef;
+        border: 1px solid #e0e0e0;
+        padding: 0 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
-    .page-btn:hover,
-    .page-btn.active {
+    .pagination .page-item.active .page-link {
         background: linear-gradient(135deg, #1e40af, #3b82f6);
         color: white;
         border-color: transparent;
+        box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
     }
+
+    .pagination .page-item .page-link:hover {
+        background: #f5f5f5;
+        border-color: #d0d0d0;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pagination .page-item.active .page-link:hover {
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        border-color: transparent;
+        transform: translateY(-2px);
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    /* Hide pagination info text */
+    .pagination-wrapper p {
+        display: none;
+    }
+
+
+
 
     @media (max-width: 768px) {
         .page-title {
@@ -245,17 +278,6 @@
             overflow-x: auto;
             padding-bottom: 1rem;
         }
-    /* Hide pagination info text (Showing 1 to X...) */
-    .hide-pagination-info .small.text-muted,
-    .hide-pagination-info p,
-    .hide-pagination-info nav > div:first-child {
-        display: none !important;
-    }
-
-    .hide-pagination-info nav > div:last-child {
-        width: 100%;
-        display: flex;
-        justify-content: center;
     }
 </style>
 @endpush
@@ -358,10 +380,11 @@
 
         <!-- Pagination -->
         @if($berita->hasPages())
-        <div class="d-flex justify-content-center mt-5 hide-pagination-info" data-aos="fade-up">
-            {{ $berita->links() }}
+        <div class="pagination-wrapper d-flex justify-content-center mt-5" data-aos="fade-up">
+            {{ $berita->links('vendor.pagination.custom') }}
         </div>
         @endif
+
     </div>
 </section>
 @endsection

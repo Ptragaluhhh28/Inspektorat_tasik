@@ -14,12 +14,25 @@
     
     <style>
         body {
-            background: linear-gradient(135deg , #00F7FF 0% , #5B23FF 100% );
+            background: url('{{ asset('images/Kota tasik.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
         }
 
         .login-container {
@@ -29,6 +42,8 @@
             overflow: hidden;
             width: 100%;
             max-width: 400px;
+            position: relative;
+            z-index: 1;
         }
 
         .login-header {

@@ -9,7 +9,8 @@ use App\Http\Controllers\Admin\AuthController;
 
 // Homepage
 Route::get('/', function () {
-    return view('home');
+    $berita = \App\Models\Berita::published()->latest()->take(3)->get();
+    return view('home', compact('berita'));
 })->name('home');
 
 // Admin Authentication Routes

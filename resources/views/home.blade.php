@@ -567,47 +567,32 @@
         </div>
 
         <div class="news-grid">
-            <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+            @forelse($berita as $index => $item)
+            <article class="news-card" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
                 <div class="news-image">
-                    <i class="fas fa-newspaper"></i>
+                    @if($item->gambar)
+                        <img src="{{ asset('images/berita/' . $item->gambar) }}" 
+                             alt="{{ $item->judul }}" 
+                             style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        <i class="fas fa-newspaper"></i>
+                    @endif
                 </div>
                 <div class="news-content">
-                    <div class="news-date">07 AGUSTUS 2025</div>
-                    <h3 class="news-title">Rapat Koordinasi Evaluasi SPI 2025 dan Pencegahan Korupsi</h3>
-                    <p class="news-excerpt">Pemerintah Kota Tasikmalaya melalui Inspektorat Daerah menggelar Rapat Koordinasi Evaluasi Rencana Aksi Pencegahan Korupsi...</p>
-                    <a href="{{ route('berita.detail', 'rapat-koordinasi-evaluasi-spi-2025') }}" class="news-link">
+                    <div class="news-date">{{ strtoupper($item->created_at->format('d F Y')) }}</div>
+                    <h3 class="news-title">{{ $item->judul }}</h3>
+                    <p class="news-excerpt">{{ Str::limit($item->excerpt, 150) }}</p>
+                    <a href="{{ route('berita.detail', $item->slug) }}" class="news-link">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="news-image">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="news-content">
-                    <div class="news-date">29 JULI 2025</div>
-                    <h3 class="news-title">Apel Pagi dan Penyampaian Program Strategis Pemerintah Kota</h3>
-                    <p class="news-excerpt">Inspektorat Daerah Kota Tasikmalaya melaksanakan apel pagi yang dirangkaikan dengan penyampaian Program Strategis...</p>
-                    <a href="{{ route('berita.detail', 'apel-pagi-program-strategis') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="news-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="news-image">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="news-content">
-                    <div class="news-date">29 MEI 2020</div>
-                    <h3 class="news-title">Penyerahan Bantuan Sosial dari BAZNAS Kota Tasikmalaya</h3>
-                    <p class="news-excerpt">Bertempat di Bale Kota Tasikmalaya Wali Kota Tasikmalaya menghadiri penyerahan bantuan sosial dari Baznas...</p>
-                    <a href="{{ route('berita.detail', 'bantuan-sosial-baznas') }}" class="news-link">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
+            @empty
+            <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #666;">
+                <i class="fas fa-newspaper" style="font-size: 3rem; margin-bottom: 1rem; color: #ccc;"></i>
+                <p>Belum ada berita terbaru.</p>
+            </div>
+            @endforelse
         </div>
 
         <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up" data-aos-delay="400">

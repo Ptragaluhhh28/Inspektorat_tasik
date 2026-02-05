@@ -156,12 +156,8 @@
                 </a>
             </div>
             <div data-aos="fade-left">
-                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 20px; padding: 3rem; color: white; text-align: center;">
-                    <i class="fas fa-shield-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Mengawal Integritas</h3>
-                    <p style="opacity: 0.9; line-height: 1.6;">
-                        Memastikan setiap proses penyelenggaraan pemerintahan berjalan dengan integritas tinggi dan sesuai dengan prinsip-prinsip good governance.
-                    </p>
+                <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+                    <img src="{{ asset('images/gedung-inspektorat.jpg') }}" alt="Gedung Inspektorat" style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
         </div>

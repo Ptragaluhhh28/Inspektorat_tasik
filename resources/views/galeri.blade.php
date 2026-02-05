@@ -109,6 +109,14 @@
     </div>
 </section>
 
+<!-- Elfsight YouTube Gallery | Untitled YouTube Gallery -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-103074db-75ff-4aad-be63-71a7ff8e89a7" data-elfsight-app-lazy></div>
+    </div>
+</section>
+
 <!-- Modal untuk Detail Gambar -->
 <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 modal-backdrop z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
