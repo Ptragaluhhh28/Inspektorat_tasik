@@ -75,39 +75,7 @@
         font-size: 1.1rem;
     }
 
-    .structure-section {
-        padding: 4rem 0;
-        background: white;
-    }
 
-    .org-chart {
-        background: #f8f9ff;
-        padding: 3rem;
-        border-radius: 20px;
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    .position-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        margin: 1rem;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        display: inline-block;
-        min-width: 250px;
-    }
-
-    .position-title {
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
-    }
-
-    .position-name {
-        color: #1e40af;
-        font-weight: 500;
-    }
 
     @media (max-width: 768px) {
         .page-title {
@@ -116,11 +84,6 @@
         
         .vm-grid {
             grid-template-columns: 1fr;
-        }
-        
-        .position-card {
-            display: block;
-            margin: 1rem 0;
         }
     }
 </style>
@@ -206,48 +169,6 @@
     </div>
 </section>
 
-<!-- Organizational Structure -->
-<section class="structure-section">
-    <div class="container">
-        <div class="text-center" data-aos="fade-up">
-            <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem;">
-                Struktur Organisasi
-            </h2>
-            <p style="color: #666; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                Susunan kepemimpinan dan struktur organisasi Inspektorat Kota Tasikmalaya
-            </p>
-        </div>
-
-        <div class="org-chart" data-aos="fade-up" data-aos-delay="200">
-            <div class="position-card">
-                <div class="position-title">Inspektur</div>
-                <div class="position-name">-</div>
-            </div>
-
-            <div style="margin: 2rem 0;">
-                <div class="position-card">
-                    <div class="position-title">Sekretaris</div>
-                    <div class="position-name">-</div>
-                </div>
-            </div>
-
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-                <div class="position-card">
-                    <div class="position-title">Inspektur Pembantu Wilayah I</div>
-                    <div class="position-name">-</div>
-                </div>
-                <div class="position-card">
-                    <div class="position-title">Inspektur Pembantu Wilayah II</div>
-                    <div class="position-name">-</div>
-                </div>
-                <div class="position-card">
-                    <div class="position-title">Inspektur Pembantu Wilayah III</div>
-                    <div class="position-name">-</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Values -->
 <section class="content-section" style="background: #f8f9ff;">

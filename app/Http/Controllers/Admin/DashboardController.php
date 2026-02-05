@@ -24,19 +24,23 @@ class DashboardController extends Controller
         // Kontak masuk terbaru
         $kontakTerbaru = Kontak::latest()->take(5)->get();
 
-        // Data untuk chart pengunjung (dummy data for now)
-        $chartData = collect([
-            ['tanggal' => '10/10', 'pengunjung' => 45, 'page_views' => 120],
-            ['tanggal' => '11/10', 'pengunjung' => 52, 'page_views' => 145],
-            ['tanggal' => '12/10', 'pengunjung' => 38, 'page_views' => 98],
-            ['tanggal' => '13/10', 'pengunjung' => 61, 'page_views' => 167],
-            ['tanggal' => '14/10', 'pengunjung' => 49, 'page_views' => 134],
-            ['tanggal' => '15/10', 'pengunjung' => 57, 'page_views' => 156],
-            ['tanggal' => '16/10', 'pengunjung' => 63, 'page_views' => 189]
-        ]);
+        // Data untuk chart pengunjung (real data for 7 days)
+        $chartData = [];
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subDays($i);
+            $count = \App\Models\Visitor::whereDate('visited_at', $date)->count();
+            
+            $chartData[] = [
+                'tanggal' => $date->format('d/m'),
+                'pengunjung' => $count
+            ];
+        }
+        $chartData = collect($chartData);
 
-        // Total pengunjung bulan ini (dummy data)
-        $totalPengunjungBulanIni = 1256;
+        // Total pengunjung bulan ini (real data - total hits)
+        $totalPengunjungBulanIni = \App\Models\Visitor::whereMonth('visited_at', now()->month)
+            ->whereYear('visited_at', now()->year)
+            ->count();
 
         return view('admin.dashboard', compact(
             'totalBerita',

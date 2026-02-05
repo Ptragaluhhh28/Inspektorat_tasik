@@ -11,7 +11,7 @@
 <!-- Overview Stats -->
 <div class="row g-4 mb-4">
     <!-- Total Berita Stats -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="card stat-card primary h-100">
             <div class="card-body p-4">
                 <div class="d-flex align-items-center justify-content-between">
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Berita Published Stats -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="card stat-card success h-100">
             <div class="card-body p-4">
                 <div class="d-flex align-items-center justify-content-between">
@@ -46,11 +46,23 @@
                 </div>
             </div>
         </div>
+    </div>    <!-- Pengunjung Bulan Ini Stats -->
+    <div class="col-md-4">
+        <div class="card stat-card info h-100">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="flex-grow-1">
+                        <div class="text-sm fw-medium text-muted text-uppercase tracking-wider mb-2">
+                            Pengunjung Bulan Ini
+                        </div>
+                        <div class="d-flex align-items-baseline">
+                            <div class="h3 fw-bold text-gray-900 mb-0">{{ number_format($totalPengunjungBulanIni) }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-
-
 </div>
 
 <div class="row">
@@ -71,9 +83,6 @@
                     <div class="small">
                         <span class="me-3">
                             <i class="fas fa-circle text-primary me-1"></i>Pengunjung
-                        </span>
-                        <span>
-                            <i class="fas fa-circle text-success me-1"></i>Page Views
                         </span>
                     </div>
                 </div>
@@ -150,10 +159,10 @@ const pengunjungChart = new Chart(ctx, {
         datasets: [{
             label: 'Pengunjung',
             data: chartData.map(item => item.pengunjung),
-            backgroundColor: '#4682B4', // SteelBlue color similar to the image
+            backgroundColor: '#4682B4',
             borderColor: '#4682B4',
             borderWidth: 1,
-            barPercentage: 0.5, // Make bars thinner
+            barPercentage: 0.5,
         }]
     },
     options: {

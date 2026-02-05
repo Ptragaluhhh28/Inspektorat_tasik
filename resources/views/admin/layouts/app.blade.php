@@ -137,6 +137,7 @@
         .stat-card.success::before { background: var(--success-color); }
         .stat-card.warning::before { background: var(--warning-color); }
         .stat-card.danger::before { background: var(--danger-color); }
+        .stat-card.info::before { background: var(--accent-color); }
         
         .admin-header {
             background: white;
